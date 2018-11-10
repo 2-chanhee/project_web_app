@@ -6,31 +6,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class Enrollment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button enroll=(Button)findViewById(R.id.enroll);
-        enroll.setOnClickListener(new OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
-        Intent enrollintent=new Intent(getApplicationContext(),Enrollment.class);
-        startActivity(enrollintent);
-                                      }
-                                  });
-
-
-
-        ///
-
-        /////
-
+        setContentView(R.layout.activity_enrollment);
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -49,13 +31,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
                 return true;
 
+            case R.id.chat:
+                Intent intent3=new Intent(getApplicationContext(),Category.class);
+                startActivity(intent3);
+                return true;
+
             case R.id.login:
                 Intent intent2=new Intent(getApplicationContext(),Login.class);
                 startActivity(intent2);
                 return true;
 
-                default:
-                    return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
 
     }
