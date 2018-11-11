@@ -1,0 +1,21 @@
+<div class="menubar">
+  <ul>
+    <li [routerLinkActive]="['active']"Home>
+      <a [routerLink]="['/']">Home</a>
+   <li><a>카테고리</a>
+    <ul>
+       <li><a>카테고리1</a></li>
+       <li><a>카테고리2</a></li>
+       <li><a>카테고리3</a></li>
+       <li><a>카테고리4</a></li>
+      </ul>
+   </li>
+   <li [routerLinkActive]="['active']"로그인>
+    <a [routerLink]="['/','login']">로그인</a>
+   </li>
+
+  </ul>
+  </div>
+<router-outlet></router-outlet>
+
+
