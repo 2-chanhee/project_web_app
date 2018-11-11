@@ -26,7 +26,7 @@ public class GetData extends GetRequest {
     @Override
     protected void onPreExecute() {
         //EditText server =  activity.findViewById(R.id.server);
-        String serverURLStr = "13.125.217.167";
+        String serverURLStr = "http://13.209.50.47:80";
         try {
             url = new URL(serverURLStr+"/get"+"-"+"data");  // 여기서 AWS 주소를 넣어야 한다.
         } catch (MalformedURLException e) {
@@ -38,7 +38,7 @@ public class GetData extends GetRequest {
     protected void onPostExecute(String jsonString) {
         if (jsonString == null)
             return;
-        ArrayList<UserInfomation> arrayList = getArrayListFromJSONString(jsonString);
+        ArrayList<Contents> arrayList = getArrayListFromJSONString(jsonString);
 
         ArrayAdapter adapter = new ArrayAdapter(activity,
                 android.R.layout.simple_list_item_1,
@@ -48,8 +48,8 @@ public class GetData extends GetRequest {
         txtList.setDividerHeight(10);
     }
 
-    protected ArrayList<UserInfomation> getArrayListFromJSONString(String jsonString) {
-        ArrayList<UserInfomation> output = new ArrayList();
+    protected ArrayList<Contents> getArrayListFromJSONString(String jsonString) {
+        ArrayList<Contents> output = new ArrayList();
         try {
 
             JSONArray jsonArray = new JSONArray(jsonString);
@@ -58,12 +58,13 @@ public class GetData extends GetRequest {
 
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
 
-                UserInfomation userInfomation = new UserInfomation(jsonObject.getString("_id"),
+                Contents book = new Contents(jsonObject.getString("_id"),
+                        jsonObject.getString("category"),
                         jsonObject.getString("title"),
                         jsonObject.getString("content"),
                         jsonObject.getString("price"));
 
-                output.add(userInfomation);
+                output.add(book);
             }
         } catch (JSONException e) {
             Log.e(TAG, "Exception in processing JSONString.", e);

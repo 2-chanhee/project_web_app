@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.soo.webapp">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--위에있는 permission찾느라 진짜 8시간은 쓴듯.. mongodb왜 안먹나 코드 다 분석하고 도저히 왜 안되는지 이해안되고 다시 프로젝트 만들고 하면서 찾음!-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
