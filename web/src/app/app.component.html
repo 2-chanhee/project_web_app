@@ -10,11 +10,21 @@
        <li><a>카테고리4</a></li>
       </ul>
    </li>
+  
    <li [routerLinkActive]="['active']"로그인>
     <a [routerLink]="['/','login']">로그인</a>
    </li>
 
+   <li [routerLinkActive]="['active']"프로필>
+    <a [routerLink]="['/','user']">프로필</a>
+   </li>
+
+   <li [routerLinkActive]="['active']"관리자>
+    <a [routerLink]="['/','admin']">관리자</a>
+   </li>
+
   </ul>
+ 
   </div>
 <router-outlet></router-outlet>
 
