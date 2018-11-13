@@ -5,3 +5,19 @@
     border: 5px double #666;
     margin: 30px auto;
    }
+
+.member {
+    font-size: 50px;
+    /*text-shadow: 0 0 10px #666;*/
+    color: (109,109,109);
+    margin: 0 auto;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: "맑은 고딕";
+    
+   }
+   #wrap {
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+   }
