@@ -104,6 +104,16 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/camara"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="사진찍기" />
+
+            <Button
                 android:id="@+id/insertBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -111,12 +121,17 @@
                 android:text="등록하기"
                 android:textSize="20dp" />
 
+            <ImageView
+                android:id="@+id/camaraimage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="20dp" />
+
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
     </LinearLayout>
 
 

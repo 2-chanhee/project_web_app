@@ -26,7 +26,7 @@ public class GetData extends GetRequest {
     @Override
     protected void onPreExecute() {
         //EditText server =  activity.findViewById(R.id.server);
-        String serverURLStr = "http://13.209.50.47:80";
+        String serverURLStr = "http://54.180.88.107";
         try {
             url = new URL(serverURLStr+"/get"+"-"+"data");  // 여기서 AWS 주소를 넣어야 한다.
         } catch (MalformedURLException e) {
@@ -62,7 +62,8 @@ public class GetData extends GetRequest {
                         jsonObject.getString("category"),
                         jsonObject.getString("title"),
                         jsonObject.getString("content"),
-                        jsonObject.getString("price"));
+                        jsonObject.getString("price"),
+                        jsonObject.getString("imgurl"));
 
                 output.add(book);
             }

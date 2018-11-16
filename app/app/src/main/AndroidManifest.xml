@@ -3,6 +3,11 @@
     package="com.example.soo.webapp">
     <uses-permission android:name="android.permission.INTERNET"/>
     <!--위에있는 permission찾느라 진짜 8시간은 쓴듯.. mongodb왜 안먹나 코드 다 분석하고 도저히 왜 안되는지 이해안되고 다시 프로젝트 만들고 하면서 찾음!-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +30,16 @@
         <activity android:name=".Chat"></activity>
         <activity android:name=".Login"></activity>
         <activity android:name=".Enrollment"></activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.soo.webapp"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>
