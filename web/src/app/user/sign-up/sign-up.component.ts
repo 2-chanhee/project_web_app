@@ -20,16 +20,15 @@ export class SignUpComponent implements OnInit {
   onSubmit(form : NgForm){
     this.userService.postUser(form.value).subscribe(
       res => {
-        this.showSuccessMessage = true;
-        setTimeout(() => this.showSuccessMessage = false,4000);
+        alert('회원가입 완료');
         this.resetForm(form);
       },
       err => {
         if(err.status == 422){
-          this.serverErrorMessages = err.error.join('<br/>');
+          alert('이메일 중복');
         } 
         else
-          this.serverErrorMessages = 'Something went wrong. Please contact admin';   
+          alert('db연결 오류');
       }
     );
   }
