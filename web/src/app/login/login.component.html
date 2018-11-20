@@ -1,28 +1,38 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<form>
-  <div id="wrap">
-   <h1 class="member">Login</h1>
-   <div class="form">
-    <div class="form2">
-     <div class="form3">
-      <label for="user">Id</label><input type="text" id="user">
-      <div class="clear"></div>
-      <label for="user">Password</label><input type="password" id="user">
-     </div>
-     <input type="submit" value="Log in">
-     <div class="clear"></div>
-     <div class="form4">
-      
-      <div class="clear"></div>
-      
-      <!--<label><input type="button" value="Sign Up"></label>-->
-      <P>회원이 아니신가요? <a [routerLinkActive]="['active']"회원가입>
-        <a [routerLink]="['/','signup']">회원가입</a>
-       </a></P>
-      
-     </div>
-    </div>
-   </div>
-  </div>
- </form>
+<div class="container">
+  <div class="card card-login mx-auto mt-5">
+    <div class="card-header">Login</div>
+    <div class="card-body">
 
+
+
+
+
+      <form>
+        <div class="form-group">
+          <label for="exampleInputName">Name</label>
+          <input class="form-control" name="username" placeholder="Name" type="text"  onkeyup="showHint(this.value)">
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        
+        <input type="submit" class="btn btn-primary btn-block" name="submit" value="Login" >
+        <!-- <a class="btn btn-primary btn-block" href="tables.php" name="submit">Login</a> -->
+      </form>
+
+
+      <div class="text-center">
+        <a [routerLink]="['/','signup']" class="d-block small mt-3" >Register an Account</a>
+
+       
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
