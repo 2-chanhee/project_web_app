@@ -1,0 +1,92 @@
+<div class="form">
+  <div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="index.html">Dashboard</a>
+      </li>
+      <li class="breadcrumb-item active">Write</li>
+    </ol>
+
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-table"></i> Write</div>
+      <div class="card-body">
+        <div class="table-responsive">
+
+  <article class="boardArticle">
+  <h3>한성장터</h3>
+  <br>
+  <div id="boardWrite">
+    <form method="post" enctype="multipart/form-data">
+   
+      <table id="boardWrite">
+        <caption class="readHide">자유게시판 글쓰기</caption>
+
+        <tbody>
+    
+          <tr>
+          <th scope="row"><label for="bId">작성자</label></th>
+          <td class="title"><input type="text" name="bId" id="bId"><hr></td>
+          </tr>
+
+          <tr>
+            <th scope="row"><label for="bTitle">제목</label></th>
+            <td class="title"><input type="text" name="bTitle" id="bTitle"><hr></td>
+          </tr>
+
+          <tr>
+            <th scope="row"><label for="bCover">표지</label></th>
+            <td class="cover"><input type="file" name="image">
+                        <!-- <input type="submit" value="Upload"> --><hr></td>
+
+ 
+          </tr>
+
+          <tr>
+            <th scope="row"><label for="bContent">내용</label></th>
+            <td class="content"><textarea name="bContent" id="bContent"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btnSet">
+        <button type="submit" class="btnSubmit btn">
+         등록
+        </button>
+        <a href="/" class="btnList btn">목록</a>
+      </div>
+    </form>
+  </div>
+</article>
+
+        </div>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!-- /.container-fluid-->
+  <!-- /.content-wrapper-->
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>Copyright © Your Website 2017</small>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fa fa-angle-up"></i>
+  </a>
