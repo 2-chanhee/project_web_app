@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ViewComponent } from './view/view.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { WriteComponent } from './write/write.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 export const appRoutes: Routes = [
     
@@ -16,7 +17,8 @@ export const appRoutes: Routes = [
         {path: 'signin', component: SignInComponent},
         {path: 'view', component: ViewComponent},
         {path: 'userprofile', component:  UserProfileComponent},
-        {path: 'write', component: WriteComponent}
+        {path: 'write', component: WriteComponent},
+        {path: 'employee', component: EmployeeComponent}
         
         ];
       

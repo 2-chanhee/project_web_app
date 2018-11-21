@@ -17,6 +17,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { WriteComponent } from './write/write.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 
@@ -32,7 +33,8 @@ import { UserService } from './shared/user.service';
     WriteComponent,
     SignInComponent,
     SignInComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
