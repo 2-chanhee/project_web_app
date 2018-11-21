@@ -1,4 +1,4 @@
-<div class="row">
+<div class="form">
   <div class="col s12">
     <div class="card">
       <div class="card-content white-text">
@@ -8,28 +8,26 @@
               <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Enter full name" required>
-                  <label>Name :
-                    <label class="red-text">*</label>
-                  </label>
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="이름" required>
+                 
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Eg : Snr. Developer">
-                  <label>Position :</label>
+                  <input type="text" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="제목">
+               
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="Enter office location">
-                  <label>Office :</label>
+                  <input type="text" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="내용">
+               
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="salary" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary per annum">
-                  <label>Salary :</label>
+                  <input type="text" name="salary" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="전호번호">
+                 
                 </div>
               </div>
               <div class="row">
@@ -44,10 +42,10 @@
               <table class="responsive-table highlight">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>가격</th>
+                      <th>이름</th>
+                      <th>제목 </th>
+                      <th>내용</th>
+                      <th>전화번호</th>
                       <th></th>
                     </tr>
                   </thead>
