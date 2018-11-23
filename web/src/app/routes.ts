@@ -18,7 +18,7 @@ export const appRoutes: Routes = [
         {path: 'signin', component: SignInComponent},
         {path: 'view', component: ViewComponent},
         {path: 'userprofile', component:  UserProfileComponent, canActivate:[AuthGuard]},
-        {path: 'write', component: WriteComponent},
+        {path: 'write', component: WriteComponent,canActivate:[AuthGuard]},
         {path: 'employee', component: EmployeeComponent}
         
         ];
