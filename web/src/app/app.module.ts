@@ -19,7 +19,8 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
 import { EmployeeComponent } from './employee/employee.component';
 import { AuthGuard } from './auth/auth.guard';
-import {AuthInterceptor} from './auth/auth.interceptor'; 
+import {AuthInterceptor} from './auth/auth.interceptor';
+import { BarComponent } from './bar/bar.component'; 
 
 
 
@@ -36,7 +37,8 @@ import {AuthInterceptor} from './auth/auth.interceptor';
     SignInComponent,
     SignInComponent,
     UserProfileComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    BarComponent
   ],
   imports: [
     BrowserModule,

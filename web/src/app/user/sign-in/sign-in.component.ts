@@ -28,7 +28,7 @@ export class SignInComponent implements OnInit {
       res => {
         this.userService.setToken(res['token']);
         alert('로그인 성공');
-        this.router.navigateByUrl('/userprofile');
+        this.router.navigateByUrl('/');
       },
       err => {
         this.serverErrorMessages = err.error.message;
