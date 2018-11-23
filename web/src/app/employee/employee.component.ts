@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { Router } from '@angular/router';
 import { EmployeeService } from '../shared/employee.service';
 import { Employee } from '../shared/employee.model';
 
@@ -14,7 +14,8 @@ declare var M: any;
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService,
+    private router: Router) { }
 
   ngOnInit() {
     this.resetForm();
@@ -38,6 +39,8 @@ export class EmployeeComponent implements OnInit {
       this.employeeService.postEmployee(form.value).subscribe((res) => {
         this.resetForm(form);
         this.refreshEmployeeList();
+        alert("입력 완료.");
+        this.router.navigate(['/']);
         M.toast({ html: 'Saved successfully', classes: 'rounded' });
       });
     }
