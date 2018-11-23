@@ -14,13 +14,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AdminComponent } from './admin/admin.component';
 import { ViewComponent } from './view/view.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { WriteComponent } from './write/write.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
-import { EmployeeComponent } from './employee/employee.component';
 import { AuthGuard } from './auth/auth.guard';
 import {AuthInterceptor} from './auth/auth.interceptor';
-import { BarComponent } from './bar/bar.component'; 
+import { BarComponent } from './bar/bar.component';
+import { WriteComponent } from './write/write.component'; 
 
 
 
@@ -33,12 +32,11 @@ import { BarComponent } from './bar/bar.component';
     WelcomeComponent,
     AdminComponent,
     ViewComponent,
-    WriteComponent,
     SignInComponent,
     SignInComponent,
     UserProfileComponent,
-    EmployeeComponent,
-    BarComponent
+    BarComponent,
+    WriteComponent
   ],
   imports: [
     BrowserModule,

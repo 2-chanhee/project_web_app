@@ -6,9 +6,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AdminComponent } from './admin/admin.component';
 import { ViewComponent } from './view/view.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { WriteComponent } from './write/write.component';
-import { EmployeeComponent } from './employee/employee.component';
 import { AuthGuard } from './auth/auth.guard';
+import { WriteComponent } from './write/write.component'; 
 
 export const appRoutes: Routes = [
     
@@ -18,8 +17,6 @@ export const appRoutes: Routes = [
         {path: 'signin', component: SignInComponent},
         {path: 'view', component: ViewComponent},
         {path: 'userprofile', component:  UserProfileComponent, canActivate:[AuthGuard]},
-        {path: 'write', component: WriteComponent,canActivate:[AuthGuard]},
-        {path: 'employee', component: EmployeeComponent}
-        
+        {path: 'write', component:  WriteComponent, canActivate:[AuthGuard]},  
         ];
       
