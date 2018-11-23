@@ -7,6 +7,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth/auth.guard';
 import { WriteComponent } from './write/write.component'; 
+import { TestComponent } from './test/test.component'; 
 
 export const appRoutes: Routes = [
     
@@ -16,5 +17,6 @@ export const appRoutes: Routes = [
         {path: 'signin', component: SignInComponent},
         {path: 'userprofile', component:  UserProfileComponent, canActivate:[AuthGuard]},
         {path: 'write', component:  WriteComponent, canActivate:[AuthGuard]},  
+        {path: 'test', component: TestComponent},
         ];
       

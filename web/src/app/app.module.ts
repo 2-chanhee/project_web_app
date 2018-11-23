@@ -18,7 +18,8 @@ import { UserService } from './shared/user.service';
 import { AuthGuard } from './auth/auth.guard';
 import {AuthInterceptor} from './auth/auth.interceptor';
 import { BarComponent } from './bar/bar.component';
-import { WriteComponent } from './write/write.component'; 
+import { WriteComponent } from './write/write.component';
+import { TestComponent } from './test/test.component'; 
 
 
 
@@ -34,7 +35,8 @@ import { WriteComponent } from './write/write.component';
     SignInComponent,
     UserProfileComponent,
     BarComponent,
-    WriteComponent
+    WriteComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

@@ -9,10 +9,13 @@ import {User} from './user.model';
 })
 export class UserService {
   selectedUser: User = {
+    _id: '',
     fullName: '',
     email: '',
     password: ''
   }
+ user: User[];
+  readonly baseURL = 'http://localhost:3000/user';
 
   noAuthHeader = {headers:new HttpHeaders({'NoAuth': 'True'})};
 
@@ -20,6 +23,20 @@ export class UserService {
 
   //http methods
 
+  
+ 
+  getUserList() {
+    return this.http.get(this.baseURL);
+  }
+
+
+  putUser(user: User) {
+    return this.http.put(this.baseURL + `/${user._id}`, user);
+  }
+
+  deleteUser(_id: string) {
+    return this.http.delete(this.baseURL + `/${_id}`);
+  }
   postUser(user: User){
     return this.http.post(environment.apiBaseUrl+'/register' ,user,this.noAuthHeader);
   }

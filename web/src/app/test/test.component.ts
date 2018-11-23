@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,12 +9,12 @@ import { User } from '../shared/user.model';
 
 declare var M: any;
 @Component({
-  selector: 'app-write',
-  templateUrl: './write.component.html',
-  styleUrls: ['./write.component.css'],
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.css'],
   providers: [User]
 })
-export class WriteComponent implements OnInit {
+export class TestComponent implements OnInit {
 
   constructor(private userService: UserService,
     private router: Router) { }
