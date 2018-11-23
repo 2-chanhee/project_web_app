@@ -16,5 +16,9 @@ export class BarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onLogout(){
+    this.userService.deleteToken();
+    alert("로그아웃 성공.");
+    this.router.navigate(['/']);
+  }
 }

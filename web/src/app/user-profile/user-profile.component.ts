@@ -25,7 +25,8 @@ export class UserProfileComponent implements OnInit {
 
   onLogout(){
     this.userService.deleteToken();
-    this.router.navigate(['/signin']);
+    alert("로그아웃 되었습니다.");
+    this.router.navigate(['/']);
   }
 
 }
