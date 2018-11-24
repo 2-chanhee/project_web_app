@@ -1,71 +1,72 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { EmployeeService } from '../shared/employee.service';
-import { UserService } from '../shared/user.service';
 import { Employee } from '../shared/employee.model';
+import { Router } from '@angular/router';
+import { UserService } from '../shared/user.service';
 import { User } from '../shared/user.model';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 declare var M: any;
 @Component({
   selector: 'app-write',
   templateUrl: './write.component.html',
   styleUrls: ['./write.component.css'],
-  providers: [User]
+  providers: [EmployeeService]
 })
 export class WriteComponent implements OnInit {
 
-  constructor(private userService: UserService,
-    private router: Router) { }
+  constructor(private employeeService: EmployeeService,private router:Router) { }
 
   ngOnInit() {
     this.resetForm();
-    this.refreshUserList();
+    this.refreshEmployeeList();
   }
+
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
-    this.userService.selectedUser = {
+    this.employeeService.selectedEmployee = {
       _id: "",
-      fullName: "",
-      email: "",
-     password: ""
+      name: "",
+      position: "",
+      office: "",
+      salary: null
     }
   }
 
   onSubmit(form: NgForm) {
     if (form.value._id == "") {
-      this.userService.postUser(form.value).subscribe((res) => {
+      this.employeeService.postEmployee(form.value).subscribe((res) => {
         this.resetForm(form);
-        this.refreshUserList();
-        alert("입력 완료.");
-        this.router.navigate(['/']);
-        M.toast({ html: 'Saved successfully', classes: 'rounded' });
+        this.refreshEmployeeList();
+       alert("입력 완료");
+       this.router.navigateByUrl('/');
       });
     }
     else {
-      this.userService.putUser(form.value).subscribe((res) => {
+      this.employeeService.putEmployee(form.value).subscribe((res) => {
         this.resetForm(form);
-        this.refreshUserList();
+        this.refreshEmployeeList();
         M.toast({ html: 'Updated successfully', classes: 'rounded' });
       });
     }
   }
 
-  refreshUserList() {
-    this.userService.getUserList().subscribe((res) => {
-      this.userService.user = res as User[];
+  refreshEmployeeList() {
+    this.employeeService.getEmployeeList().subscribe((res) => {
+      this.employeeService.employees = res as Employee[];
     });
   }
 
-  onEdit(user: User) {
-    this.userService.selectedUser = user;
+  onEdit(emp: Employee) {
+    this.employeeService.selectedEmployee = emp;
   }
 
   onDelete(_id: string, form: NgForm) {
     if (confirm('Are you sure to delete this record ?') == true) {
-      this.userService.deleteUser(_id).subscribe((res) => {
-        this.refreshUserList();
+      this.employeeService.deleteEmployee(_id).subscribe((res) => {
+        this.refreshEmployeeList();
         this.resetForm(form);
         M.toast({ html: 'Deleted successfully', classes: 'rounded' });
       });
@@ -73,4 +74,3 @@ export class WriteComponent implements OnInit {
   }
 
 }
-
