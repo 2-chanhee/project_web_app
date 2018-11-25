@@ -7,8 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
-public class InsertData extends PostRequest {
-    public InsertData(Activity activity) {
+public class InsertLoginData extends PostRequest {
+    public InsertLoginData(Activity activity) {
         super(activity);
     }
 
@@ -18,7 +18,7 @@ public class InsertData extends PostRequest {
 //        String serverURLStr = server.getText().toString();
         String serverURLStr = "http://52.79.226.43";
         try {
-            url = new URL(serverURLStr + "/insert");
+            url = new URL(serverURLStr + "/Lgninsert");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

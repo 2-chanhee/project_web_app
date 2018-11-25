@@ -15,7 +15,7 @@ public class DeleteData extends PostRequest {
         protected void onPreExecute() {
            // EditText server = activity.findViewById(R.id.server);
           //  String serverURLStr = server.getText().toString();
-            String serverURLStr = "http://54.180.88.107";
+            String serverURLStr = "http://52.79.226.43";
             try {
                 url = new URL(serverURLStr + "/delete");
             } catch (MalformedURLException e) {

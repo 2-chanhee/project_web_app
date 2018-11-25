@@ -56,6 +56,7 @@ public class Enrollment extends AppCompatActivity {
                 new Thread(){
                     public void run(){
                         s3upload();
+                        Log.e("s3", "올라가는중?");
                     }
                 }.start();
                 //네트워크특성상 가져오는 데이터 양이 정해져 있지 않기 때문에 쓰레드 추가해야 한다고 함..
@@ -83,14 +84,15 @@ public class Enrollment extends AppCompatActivity {
                     postDataParam.put("title", edit_title.getText().toString());
                     postDataParam.put("content", edit_content.getText().toString());
                     postDataParam.put("price", edit_author.getText().toString());
-                    postDataParam.put("imgurl","https://s3.ap-northeast-2.amazonaws.com/webwep/"+mPhotoFileName);
+                    postDataParam.put("imgurl","https://s3.ap-northeast-2.amazonaws.com/wpqkf/"+mPhotoFileName);
                 } catch (JSONException e) {
                     Log.e("등록창", "JSONEXception");
                 }
                 new InsertData(Enrollment.this).execute(postDataParam);
                // new GetData(Enrollment.this).execute();
                 //////
-
+                Intent goMain=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(goMain);
             }
         });
 
@@ -98,18 +100,18 @@ public class Enrollment extends AppCompatActivity {
         /////////////////////////////////s3 접속시작/////////////////////////////////
         /////////////////////////////////oncrete()안////////////////////////////////
 // Amazon Cognito 인증 공급자를 초기화합니다
-        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
-                getApplicationContext(),
-                "ap-northeast-2:1c649722-8ef1-464a-87e6-5c2c49fd2000", // 자격 증명 풀 ID
-                Regions.AP_NORTHEAST_2 // 리전
-        );
-
-        AmazonS3 s3 = new AmazonS3Client(credentialsProvider);
-        // S3 버킷의 Region 이 서울일 경우 아래와 같습니다.
-        s3.setRegion(Region.getRegion(Regions.AP_NORTHEAST_2));
-        s3.setEndpoint("s3.ap-northeast-2.amazonaws.com");
-
-        TransferUtility transferUtility = new TransferUtility(s3, getApplicationContext());
+//        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
+//                getApplicationContext(),
+//                "ap-northeast-2:1c649722-8ef1-464a-87e6-5c2c49fd2000", // 자격 증명 풀 ID
+//                Regions.AP_NORTHEAST_2 // 리전
+//        );
+//
+//        AmazonS3 s3 = new AmazonS3Client(credentialsProvider);
+//        // S3 버킷의 Region 이 서울일 경우 아래와 같습니다.
+//        s3.setRegion(Region.getRegion(Regions.AP_NORTHEAST_2));
+//        s3.setEndpoint("s3.ap-northeast-2.amazonaws.com");
+//
+//        TransferUtility transferUtility = new TransferUtility(s3, getApplicationContext());
 
 
 
@@ -271,7 +273,7 @@ public class Enrollment extends AppCompatActivity {
 //    }//외부메모리에서 allow누르면 바로 노래 재생 권한설정
 //권한끝//
 public void s3upload(){//s3upload관련해서 따로 메소드 만듬
-    // Amazon Cognito 인증 공급자를 초기화합니다
+// Amazon Cognito 인증 공급자를 초기화합니다
     CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
             getApplicationContext(),
             "ap-northeast-2:1c649722-8ef1-464a-87e6-5c2c49fd2000", // 자격 증명 풀 ID
@@ -291,6 +293,6 @@ public void s3upload(){//s3upload관련해서 따로 메소드 만듬
 //                        mPhotoFileName,    /* 버킷에 저장할 파일의 이름 */
 //                        mPhotoFile        /* 버킷에 저장할 파일  */
 //                );
-    s3.putObject("webwep",mPhotoFileName,mPhotoFile);
+    s3.putObject("wpqkf",mPhotoFileName,mPhotoFile);
 }
 }

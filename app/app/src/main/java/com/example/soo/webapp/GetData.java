@@ -26,7 +26,7 @@ public class GetData extends GetRequest {
     @Override
     protected void onPreExecute() {
         //EditText server =  activity.findViewById(R.id.server);
-        String serverURLStr = "http://54.180.88.107";
+        String serverURLStr = "http://52.79.226.43";
         try {
             url = new URL(serverURLStr+"/get"+"-"+"data");  // 여기서 AWS 주소를 넣어야 한다.
         } catch (MalformedURLException e) {
@@ -40,13 +40,15 @@ public class GetData extends GetRequest {
             return;
         ArrayList<Contents> arrayList = getArrayListFromJSONString(jsonString);
 
-        ArrayAdapter adapter = new ArrayAdapter(activity,
-                android.R.layout.simple_list_item_1,
-                arrayList.toArray());
+//        ArrayAdapter adapter = new ArrayAdapter(activity,
+//                android.R.layout.simple_list_item_1,
+//                arrayList.toArray());
+        MyAdapter adapter =new MyAdapter(activity, R.layout.adapter,arrayList);
         ListView txtList = activity.findViewById(R.id.listview);
         txtList.setAdapter(adapter);
         txtList.setDividerHeight(10);
     }
+
 
     protected ArrayList<Contents> getArrayListFromJSONString(String jsonString) {
         ArrayList<Contents> output = new ArrayList();
