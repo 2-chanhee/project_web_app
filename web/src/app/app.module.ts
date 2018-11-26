@@ -19,7 +19,8 @@ import { AuthGuard } from './auth/auth.guard';
 import {AuthInterceptor} from './auth/auth.interceptor';
 import { BarComponent } from './bar/bar.component';
 import { WriteComponent } from './write/write.component';
-import { TestComponent } from './test/test.component'; 
+import { TestComponent } from './test/test.component';
+import { ViewComponent } from './view/view.component'; 
 
 
 
@@ -36,7 +37,8 @@ import { TestComponent } from './test/test.component';
     UserProfileComponent,
     BarComponent,
     WriteComponent,
-    TestComponent
+    TestComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

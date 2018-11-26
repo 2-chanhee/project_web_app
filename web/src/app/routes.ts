@@ -8,6 +8,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth/auth.guard';
 import { WriteComponent } from './write/write.component'; 
 import { TestComponent } from './test/test.component'; 
+import { ViewComponent } from './view/view.component'; 
 
 export const appRoutes: Routes = [
     
@@ -18,5 +19,6 @@ export const appRoutes: Routes = [
         {path: 'userprofile', component:  UserProfileComponent, canActivate:[AuthGuard]},
         {path: 'write', component:  WriteComponent, canActivate:[AuthGuard]},  
         {path: 'test', component: TestComponent},
+        {path: 'view', component: ViewComponent},
         ];
       
