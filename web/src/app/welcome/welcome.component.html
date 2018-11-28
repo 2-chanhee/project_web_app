@@ -19,15 +19,15 @@
                 <thead>
                   <tr>
                 
-                    <th>제목 </th>
-                    <th>작성자</th>
+                    <th>임시 </th>
+                    <th>테스트</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tr *ngFor="let emp of employeeService.employees">
                  
-                  <a [routerLink]="['/','view']" class="nav-link"> <td>{{emp.position}}</td></a>
-                  <td>{{emp.name}}</td>
+                  <a [routerLink]="['/','view']" class="nav-link"> <td>{{emp.category}}</td></a>
+                  <td>{{emp.title}}</td>
                 
                   
                 </tr>

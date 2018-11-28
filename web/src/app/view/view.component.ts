@@ -25,10 +25,11 @@ export class ViewComponent implements OnInit {
       form.reset();
     this.employeeService.selectedEmployee = {
       _id: "",
-      name: "",
-      position: "",
-      office: "",
-      salary: null
+      category: "",
+      title: "",
+      content: "",
+      price: "",
+      imgurl: ""
     }
   }
 

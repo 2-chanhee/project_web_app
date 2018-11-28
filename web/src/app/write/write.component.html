@@ -8,25 +8,31 @@
               <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="이름" required>
+                  <input type="text" name="category" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.category" placeholder="이름" required>
                  
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="제목">
+                  <input type="text" name="title" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.title" placeholder="제목">
                
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="내용">
+                  <input type="text" name="content" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.content" placeholder="내용">
                
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="salary" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="전화번호">
+                  <input type="text" name="price" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.price" placeholder="전화번호">
+                 
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="imgurl" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.imgurl" placeholder="전화번호">
                  
                 </div>
               </div>

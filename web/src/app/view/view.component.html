@@ -18,18 +18,20 @@
             <table class="responsive-table highlight">
                 <thead>
                   <tr>
-                    <th>이름</th>
-                    <th>제목 </th>
-                    <th>내용</th>
-                    <th>전화번호</th>
+                    <th>카테고리</th>
+                    <th>타이틀 </th>
+                    <th>콘텐츠</th>
+                    <th>가격</th>
+                    <th>이미지</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tr *ngFor="let emp of employeeService.employees">
-                  <td>{{emp.name}}</td>
-                  <td>{{emp.position}}</td>
-                  <td>{{emp.office}}</td>
-                  <td>{{emp.salary}}</td>
+                  <td>{{emp.category}}</td>
+                  <td>{{emp.title}}</td>
+                  <td>{{emp.content}}</td>
+                  <td>{{emp.price}}</td>
+                  <td>{{emp.imgurl}}</td>
                   <td>
                      
 
