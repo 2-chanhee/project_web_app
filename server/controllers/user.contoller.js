@@ -43,3 +43,9 @@ module.exports.userProfile = (req, res, next) => {
             return res.status(200).json({ status: true, user : _.pick(user,['fullName','email']) });
         })
 }
+
+module.exports.UserList = (req,res,next) =>{
+    User.find((err,user)=>{
+        res.json({user:user});
+    });
+}
