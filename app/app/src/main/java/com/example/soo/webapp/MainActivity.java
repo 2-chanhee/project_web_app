@@ -54,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
         /////
 
+        Button search =(Button)findViewById(R.id.searchbtn);
+        search.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new GetDataSearch(MainActivity.this).execute();
+            }
+        });
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

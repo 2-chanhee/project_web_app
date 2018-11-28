@@ -101,19 +101,19 @@ public class MyAdapter extends BaseAdapter {
 
         // Set Text 01
         TextView category = (TextView) convertView.findViewById(R.id.category);
-        category.setText(mItems.get(position).category);
+        category.setText("카테고리: "+mItems.get(position).category);
 
         // Set Text 02
         TextView title = (TextView) convertView.findViewById(R.id.title);
-        title.setText(mItems.get(position).title);
+        title.setText("제목: "+mItems.get(position).title);
 
         // Set Text 02
         TextView content = (TextView) convertView.findViewById(R.id.content);
-        content.setText(mItems.get(position).content);
+        content.setText("내용: "+mItems.get(position).content);
 
         // Set Text 02
         TextView price = (TextView) convertView.findViewById(R.id.price);
-        price.setText(mItems.get(position).price);
+        price.setText("가격: "+mItems.get(position).price);
 
 
 

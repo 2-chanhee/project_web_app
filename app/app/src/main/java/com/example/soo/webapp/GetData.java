@@ -50,6 +50,7 @@ public class GetData extends GetRequest {
     }
 
 
+
     protected ArrayList<Contents> getArrayListFromJSONString(String jsonString) {
         ArrayList<Contents> output = new ArrayList();
         try {

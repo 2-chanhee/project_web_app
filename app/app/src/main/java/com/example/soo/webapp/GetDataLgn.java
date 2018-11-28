@@ -42,8 +42,9 @@ if(getArrayListFromJSONString(jsonString)){
     Intent intent1=new Intent(activity.getApplicationContext(),MainActivity.class);
     activity.startActivity(intent1);
 }
-        Toast.makeText(activity.getApplicationContext(), "Login failed", Toast.LENGTH_SHORT).show();
-
+if(getArrayListFromJSONString(jsonString)==false) {
+    Toast.makeText(activity.getApplicationContext(), "Login failed", Toast.LENGTH_SHORT).show();
+}
 //        textView.setText(arrayList.indexOf(0));
 
     }
