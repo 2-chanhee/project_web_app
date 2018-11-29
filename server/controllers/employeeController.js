@@ -5,7 +5,7 @@ var ObjectId = require('mongoose').Types.ObjectId;
 var { Book } = require('../models/employee');
 
 // => localhost:3000/employees/
-router.get('/', (req, res) => {
+router.get('/get-data', (req, res) => {
     Book.find((err, docs) => {
         if (!err) { res.send(docs); }
         else { console.log('Error in Retriving Employees :' + JSON.stringify(err, undefined, 2)); }

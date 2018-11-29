@@ -19,7 +19,7 @@ export class EmployeeService {
   }
 
   getEmployeeList() {
-    return this.http.get(this.baseURL);
+    return this.http.get(this.baseURL+'/get-data');
   }
 
   putEmployee(emp: Employee) {
