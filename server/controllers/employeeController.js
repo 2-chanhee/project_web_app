@@ -2,7 +2,7 @@ const express = require('express');
 var router = express.Router();
 var ObjectId = require('mongoose').Types.ObjectId;
 
-var { Book } = require('../models/employee');
+var Book = require('../models/employee');
 
 // => localhost:3000/employees/
 router.get('/get-data', (req, res) => {
@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/insert', (req, res) => {
     var book = new Book({
         category: req.body.category,
         title: req.body.title,

@@ -15,7 +15,7 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   postEmployee(emp: Employee) {
-    return this.http.post(this.baseURL, emp);
+    return this.http.post(this.baseURL+'/insert', emp);
   }
 
   getEmployeeList() {
