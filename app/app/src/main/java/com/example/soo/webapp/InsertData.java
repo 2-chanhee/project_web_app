@@ -16,7 +16,7 @@ public class InsertData extends PostRequest {
     protected void onPreExecute() {
 //        EditText server = activity.findViewById(R.id.server);
 //        String serverURLStr = server.getText().toString();
-        String serverURLStr = "http://52.79.226.43";
+        String serverURLStr = "http://13.125.246.86:3000/employees";
         try {
             url = new URL(serverURLStr + "/insert");
         } catch (MalformedURLException e) {
