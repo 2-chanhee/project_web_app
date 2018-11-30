@@ -21,7 +21,7 @@ public class GetDataSearch extends GetRequest {
     @Override
     protected void onPreExecute() {
         //EditText server =  activity.findViewById(R.id.server);
-        String serverURLStr = "http://52.79.226.43";
+        String serverURLStr = "http://13.125.246.86:3000/employees";
         try {
             url = new URL(serverURLStr+"/get"+"-"+"data");  // 여기서 AWS 주소를 넣어야 한다.
         } catch (MalformedURLException e) {
