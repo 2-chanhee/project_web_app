@@ -26,8 +26,16 @@
                 </thead>
                 <tr *ngFor="let emp of employeeService.employees">
                  
-                  <a [routerLink]="['/','view']" class="nav-link"> <td>{{emp.category}}</td></a>
+                <!--   <a [routerLink]="['/','view']" class="nav-link">
+                     
+                 </a>--> 
+                 <td>{{emp.category}}</td>
                   <td>{{emp.title}}</td>
+                  <a [routerLink]="['/','view']" class="nav-link">
+                     
+                  <td><button type="button" class="btn btn-default" aria-label="Left Align" (click)="goapplication(emp._id, emp.category)">
+                    <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                  </button></td></a>
                 
                   
                 </tr>

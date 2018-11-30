@@ -12,14 +12,21 @@ declare var M: any;
   providers: [EmployeeService]
 })
 export class ViewComponent implements OnInit {
+  info: infomation[];
 
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
     this.resetForm();
     this.refreshEmployeeList();
+    var check = localStorage.getItem('check');
+    this.employeeService.getDetails(check).subscribe((res: any) => {
+      this.info = [res];
+      console.log(this.info);
+    });
   }
 
+  
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
@@ -70,4 +77,13 @@ export class ViewComponent implements OnInit {
     }
   }
 
+}
+
+interface infomation{
+  _id: string;
+  category: string;
+  title: string;
+  content: string;
+  price: string;
+  imgurl: string;
 }

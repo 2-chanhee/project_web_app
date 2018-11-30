@@ -30,4 +30,8 @@ export class EmployeeService {
     return this.http.delete(this.baseURL + `/${_id}`);
   }
 
+  getDetails(check: string ) {
+    console.log(this.baseURL+`/${check}`);
+    return this.http.get(this.baseURL+ `/${check}`);
+}
 }
