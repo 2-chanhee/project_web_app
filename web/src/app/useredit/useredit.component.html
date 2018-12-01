@@ -1,0 +1,41 @@
+
+  <div class ="form" *ngIf="userDetails">
+              <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)"  > 
+              
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userDetails._id">
+                <div class="row"  >
+                  <div class="input-field col s12">
+                    <input type="text" name="fullName" #name="ngModel" [(ngModel)]="userDetails.fullName" placeholder="이름" required>
+                   
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="email" #name="ngModel" [(ngModel)]="userDetails.email" placeholder="이메일">
+                 
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input type="password" name="password" #name="ngModel" [(ngModel)]="userDetails.password" placeholder="비밀번호">
+                   
+                    </div>
+                  </div>
+                
+               
+                  <button class="btn btn-custom right" type="submit" [disabled]="!signUpForm.valid">Submit</button>
+               
+  
+           
+              </form>
+            </div>
+            
+
+     
+
+            
+  
+            
+  
+  

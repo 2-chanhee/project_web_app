@@ -21,7 +21,8 @@ import { BarComponent } from './bar/bar.component';
 import { WriteComponent } from './write/write.component';
 import { TestComponent } from './test/test.component';
 import { ViewComponent } from './view/view.component';
-import { EditComponent } from './edit/edit.component'; 
+import { EditComponent } from './edit/edit.component';
+import { UsereditComponent } from './useredit/useredit.component'; 
 
 
 
@@ -40,7 +41,8 @@ import { EditComponent } from './edit/edit.component';
     WriteComponent,
     TestComponent,
     ViewComponent,
-    EditComponent
+    EditComponent,
+    UsereditComponent
   ],
   imports: [
     BrowserModule,

@@ -29,4 +29,14 @@ export class UserProfileComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  goapplication(id: string ,fullName: string) {
+    var check = localStorage.setItem('check', id);
+
+    if(fullName == "F"){
+      this.router.navigateByUrl('/useredit');
+    }
+   
+  }
+
+
 }

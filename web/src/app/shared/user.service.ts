@@ -60,6 +60,9 @@ export class UserService {
   getUserProfile(){
     return this.http.get(environment.apiBaseUrl + '/userprofile');
   }
+  getUserEdit(){
+    return this.http.get(environment.apiBaseUrl + '/useredit');
+  }
 
   getUserPayload(){ //user profile에 토큰을 넘겨주기 위함
     var token = this.getToken();
@@ -78,4 +81,10 @@ export class UserService {
     else  
       return false;
   }
+
+  getDetails(check: string ) {
+    console.log(this.baseURL+`/${check}`);
+    return this.http.get(this.baseURL+ `/${check}`);
+}
+
 }
