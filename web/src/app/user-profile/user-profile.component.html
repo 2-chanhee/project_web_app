@@ -15,9 +15,13 @@
           <td>Email</td>
           <td>{{userDetails.email}}</td>
       </tr>
-      <tr>
-        <td>password</td>
-        <td><input type="password"> <input type="submit"  value="프로필 수정" > </td>
-    </tr>
+ 
   </tbody>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <button class="btn btn-custom right" type="button" (click)="resetForm(employeeForm)">프로필 수정</button>
+    </div>
+  </div>
+
 </table>
