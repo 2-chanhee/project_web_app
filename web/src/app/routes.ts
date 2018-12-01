@@ -9,6 +9,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { WriteComponent } from './write/write.component'; 
 import { TestComponent } from './test/test.component'; 
 import { ViewComponent } from './view/view.component'; 
+import { EditComponent } from './edit/edit.component'; 
 
 export const appRoutes: Routes = [
     
@@ -20,5 +21,6 @@ export const appRoutes: Routes = [
         {path: 'write', component:  WriteComponent, canActivate:[AuthGuard]},  
         {path: 'test', component: TestComponent},
         {path: 'view', component: ViewComponent},
+        {path: 'edit', component: EditComponent},
         ];
       

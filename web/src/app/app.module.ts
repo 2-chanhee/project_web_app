@@ -20,7 +20,8 @@ import {AuthInterceptor} from './auth/auth.interceptor';
 import { BarComponent } from './bar/bar.component';
 import { WriteComponent } from './write/write.component';
 import { TestComponent } from './test/test.component';
-import { ViewComponent } from './view/view.component'; 
+import { ViewComponent } from './view/view.component';
+import { EditComponent } from './edit/edit.component'; 
 
 
 
@@ -38,7 +39,8 @@ import { ViewComponent } from './view/view.component';
     BarComponent,
     WriteComponent,
     TestComponent,
-    ViewComponent
+    ViewComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
