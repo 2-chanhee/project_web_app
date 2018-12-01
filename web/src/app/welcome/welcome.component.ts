@@ -81,12 +81,7 @@ export class WelcomeComponent implements OnInit {
     if(category == "F"){
       this.router.navigateByUrl('/view');
     }
-    else if(category == "N"){
-      this.router.navigateByUrl('/nighttime');
-    }
-    else if(category == "R"){
-      this.router.navigateByUrl('/lectureroom');
-    }
+   
   }
 
 }

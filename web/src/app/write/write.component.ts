@@ -15,12 +15,17 @@ declare var M: any;
   providers: [EmployeeService]
 })
 export class WriteComponent implements OnInit {
-
+  info: infomation[];
   constructor(private employeeService: EmployeeService,private router:Router) { }
 
   ngOnInit() {
     this.resetForm();
     this.refreshEmployeeList();
+    var check = localStorage.getItem('check');
+    this.employeeService.getDetails(check).subscribe((res: any) => {
+      this.info = [res];
+      console.log(this.info);
+    });
   }
 
   resetForm(form?: NgForm) {
@@ -74,4 +79,21 @@ export class WriteComponent implements OnInit {
     }
   }
 
+  goapplication(id: string ,category: string, title: string, content: string, price: string, imgurl: string) {
+    var check = localStorage.setItem('check', id);
+
+    if(category == "F"){
+      this.router.navigateByUrl('/write');
+    }
+   
+  }
+
+}
+interface infomation{
+  _id: string;
+  category: string;
+  title: string;
+  content: string;
+  price: string;
+  imgurl: string;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { Router } from "@angular/router";
 import { EmployeeService } from '../shared/employee.service';
 import { Employee } from '../shared/employee.model';
 
@@ -14,7 +14,7 @@ declare var M: any;
 export class ViewComponent implements OnInit {
   info: infomation[];
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService,private router: Router) { }
 
   ngOnInit() {
     this.resetForm();
@@ -63,8 +63,9 @@ export class ViewComponent implements OnInit {
     });
   }
 
-  onEdit(emp: Employee) {
+  onEdit(emp: Employee ,id: string) {
     this.employeeService.selectedEmployee = emp;
+    var check = localStorage.setItem('check', id);
   }
 
   onDelete(_id: string, form: NgForm) {
@@ -75,6 +76,15 @@ export class ViewComponent implements OnInit {
         M.toast({ html: 'Deleted successfully', classes: 'rounded' });
       });
     }
+  }
+
+  goapplication(id: string ,category: string, title: string, content: string, price: string, imgurl: string) {
+    var check = localStorage.setItem('check', id);
+
+    if(category == "F"){
+      this.router.navigateByUrl('/write');
+    }
+   
   }
 
 }
