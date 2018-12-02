@@ -49,3 +49,16 @@ module.exports.UserList = (req,res,next) =>{
         res.json({user:user});
     });
 }
+
+module.exports.Edituser = (req,res,next) =>{
+    var user = {
+     
+        password: req.body.password
+    };
+    User.updateOne(_id = req._id, { $set: user }, { new: true }, (err, doc) => {
+        if (!err) { res.send(doc); }
+        else { console.log('Error in User Update :' + JSON.stringify(err, undefined, 2)); }
+    });
+}
+
+

@@ -30,6 +30,16 @@ userSchema.pre('save', function (next) {
     });
 });
 
+userSchema.pre('put', function (next) {
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(this.password, salt, (err, hash) => {
+            this.password = hash;
+            this.saltSecret = salt;
+            next();
+        });
+    });
+});
+
 // Methods
 userSchema.methods.verifyPassword = function (password) {
     return bcrypt.compareSync(password, this.password);

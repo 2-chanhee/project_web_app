@@ -30,8 +30,8 @@ export class UserService {
   }
 
 
-  putUser(user: User) {
-    return this.http.put(this.baseURL + `/${user._id}`, user);
+  putUser(user:User) {
+    return this.http.put(environment.apiBaseUrl+ `/${user._id}`,user);
   }
 
   deleteUser(_id: string) {

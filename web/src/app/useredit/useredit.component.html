@@ -1,6 +1,6 @@
 
   <div class ="form" *ngIf="userDetails">
-              <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)"  > 
+              <form #putForm="ngForm" (ngSubmit)="onSubmit(putForm)"  > 
               
                 <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userDetails._id">
                 <div class="row"  >
@@ -24,7 +24,7 @@
                   </div>
                 
                
-                  <button class="btn btn-custom right" type="submit" [disabled]="!signUpForm.valid">Submit</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!putForm.valid">Submit</button>
                
   
            

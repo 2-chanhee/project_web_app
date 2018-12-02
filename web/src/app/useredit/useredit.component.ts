@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -34,9 +35,18 @@ export class UsereditComponent implements OnInit {
     var check = localStorage.setItem('check', id);
   }
 
+  onSubmit(form:NgForm){
+    
+    this.userService.putUser(form.value).subscribe((res) => {
+    alert("수정 완료");
+  })
+  }
+
+  }
+
   
 
-}
+
 
 
 
