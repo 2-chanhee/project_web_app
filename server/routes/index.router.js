@@ -10,5 +10,5 @@ router.post('/authenticate', ctrlUser.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 router.get('/useredit', jwtHelper.verifyJwtToken, ctrlUser.userProfile);
 router.get('/admin',ctrlUser.UserList);
-router.put('/:id',ctrlUser.Edituser);
+router.put('/:id',jwtHelper.verifyJwtToken,ctrlUser.Edituser);
 module.exports = router;

@@ -2,7 +2,7 @@
   <div class ="form" *ngIf="userDetails">
               <form #putForm="ngForm" (ngSubmit)="onSubmit(putForm)"  > 
               
-                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userDetails._id">
+                <input type="text" name="_id" #_id="ngModel" [(ngModel)]="userDetails._id">
                 <div class="row"  >
                   <div class="input-field col s12">
                     <input type="text" name="fullName" #name="ngModel" [(ngModel)]="userDetails.fullName" placeholder="이름" required>

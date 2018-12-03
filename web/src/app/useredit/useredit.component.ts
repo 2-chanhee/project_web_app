@@ -39,6 +39,7 @@ export class UsereditComponent implements OnInit {
     
     this.userService.putUser(form.value).subscribe((res) => {
     alert("수정 완료");
+    this.router.navigateByUrl('/');
   })
   }
 
