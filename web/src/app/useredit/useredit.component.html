@@ -2,7 +2,7 @@
   <div class ="form" *ngIf="userDetails">
               <form #putForm="ngForm" (ngSubmit)="onSubmit(putForm)"  > 
               
-                <input type="text" name="_id" #_id="ngModel" [(ngModel)]="userDetails._id">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userDetails._id">
                 <div class="row"  >
                   <div class="input-field col s12">
                     <input type="text" name="fullName" #name="ngModel" [(ngModel)]="userDetails.fullName" placeholder="이름" required>
@@ -23,10 +23,10 @@
                     </div>
                   </div>
                 
+                  
+                  <button class="btn btn-default" type="submit" [disabled]="!putForm.valid">수정</button>
                
-                  <button class="btn btn-custom right" type="submit" [disabled]="!putForm.valid">Submit</button>
-               
-  
+            
            
               </form>
             </div>

@@ -43,14 +43,15 @@ export class EditComponent implements OnInit {
       this.employeeService.postEmployee(form.value).subscribe((res) => {
         this.resetForm(form);
         this.refreshEmployeeList();
-       alert("입력 완료");
-       this.router.navigateByUrl('/');
+       
       });
     }
     else {
       this.employeeService.putEmployee(form.value).subscribe((res) => {
         this.resetForm(form);
         this.refreshEmployeeList();
+        alert("입력 완료");
+       this.router.navigateByUrl('/');
         M.toast({ html: 'Updated successfully', classes: 'rounded' });
       });
     }

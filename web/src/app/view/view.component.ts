@@ -73,7 +73,9 @@ export class ViewComponent implements OnInit {
       this.employeeService.deleteEmployee(_id).subscribe((res) => {
         this.refreshEmployeeList();
         this.resetForm(form);
-        M.toast({ html: 'Deleted successfully', classes: 'rounded' });
+
+       this.router.navigateByUrl('/');
+       
       });
     }
   }
