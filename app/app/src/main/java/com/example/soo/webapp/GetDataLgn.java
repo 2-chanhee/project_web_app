@@ -23,9 +23,9 @@ public class GetDataLgn extends GetRequest{
     @Override
     protected void onPreExecute() {
         //EditText server =  activity.findViewById(R.id.server);
-        String serverURLStr = "http://13.125.246.86:3000/employees";
+        String serverURLStr = "http://13.125.246.86:3000/api/register";
         try {
-            url = new URL(serverURLStr+"/getLgndata");  // 여기서 AWS 주소를 넣어야 한다.
+            url = new URL(serverURLStr);  // 여기서 AWS 주소를 넣어야 한다.
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

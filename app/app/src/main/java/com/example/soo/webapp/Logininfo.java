@@ -2,15 +2,15 @@ package com.example.soo.webapp;
 
 public class Logininfo {
     String id;
-    String fullname;
+    String fullName;
     String email;
     String password;
 
 
 
-    public Logininfo(String id, String fullname, String email, String password) {
+    public Logininfo(String id, String fullName, String email, String password) {
         this.id = id;
-        this.fullname = fullname;
+        this.fullName = fullName;
         this.email = email;
         this.password = password;
 

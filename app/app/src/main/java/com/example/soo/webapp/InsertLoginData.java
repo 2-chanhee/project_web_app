@@ -16,9 +16,9 @@ public class InsertLoginData extends PostRequest {
     protected void onPreExecute() {
 //        EditText server = activity.findViewById(R.id.server);
 //        String serverURLStr = server.getText().toString();
-        String serverURLStr = "http://13.125.246.86:3000/employees";
+        String serverURLStr = "http://13.125.246.86:3000/api/register";
         try {
-            url = new URL(serverURLStr + "/Lgninsert");
+            url = new URL(serverURLStr);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

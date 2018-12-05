@@ -29,7 +29,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 JSONObject postDataParam = new JSONObject();
                 try {
-                    postDataParam.put("fullname", rgrfullname.getText().toString());
+                    postDataParam.put("fullName", rgrfullname.getText().toString());
                     postDataParam.put("email", rgremail.getText().toString());
                     postDataParam.put("password", rgrpassword.getText().toString());
 //            postDataParam.put("price", edit_author.getText().toString());
@@ -39,6 +39,8 @@ public class Register extends AppCompatActivity {
                 }
                 new InsertLoginData(Register.this).execute(postDataParam);
 //                 new GetDataLgn(Register.this).execute();
+                Intent gologin=new Intent(getApplicationContext(),Login.class);
+                startActivity(gologin);
             }
         });
 
