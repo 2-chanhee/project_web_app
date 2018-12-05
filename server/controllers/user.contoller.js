@@ -5,11 +5,17 @@ const _ = require('lodash');
 const User = mongoose.model('User');
 
 module.exports.register = (req, res, next) => {
+    console.log("TEST ID : "+ req.body.fullName);
     var user = new User();
     user.fullName = req.body.fullName;
     user.email = req.body.email;
     user.password = req.body.password;
+    console.log("\n\n post req.body.fullName="+user.fullName);
+    console.log("\n\n post req.body.email="+user.email);
+    console.log("\n\n post req.body.password="+user.password);
+
     user.save((err, doc) => {
+        console.log("save 함수 양호");
         if (!err)
             res.send(doc);
         else {
