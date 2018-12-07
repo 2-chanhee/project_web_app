@@ -11,6 +11,7 @@ import { TestComponent } from './test/test.component';
 import { ViewComponent } from './view/view.component'; 
 import { EditComponent } from './edit/edit.component'; 
 import { UsereditComponent } from './useredit/useredit.component'; 
+import { PostSearchComponent } from './post-search/post-search.component'; 
 
 export const appRoutes: Routes = [
     
@@ -24,5 +25,6 @@ export const appRoutes: Routes = [
         {path: 'view', component: ViewComponent},
         {path: 'edit', component: EditComponent},
         {path: 'useredit', component: UsereditComponent},
+        {path: 'post-search', component: PostSearchComponent},
         ];
       
