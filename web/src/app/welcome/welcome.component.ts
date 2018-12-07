@@ -1,8 +1,11 @@
 import { Component,Pipe,OnInit } from '@angular/core';
+
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
 import { EmployeeService } from '../shared/employee.service';
 import { Employee } from '../shared/employee.model';
+import { User } from '../shared/user.model';
 
 declare var M: any;
 
@@ -17,61 +20,44 @@ declare var M: any;
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private employeeService: EmployeeService,private router: Router) { }
+
+  searchForm: FormGroup;
+  allPost: Employee[];
+  currentUser: User;
+  searchPost: Employee[] = [];
+  searchClicked: boolean;
+  countList: number = 5;
+  totalPost: number = 0;
+  totalPage: number = 0;
+  countPage: number = 3;
+  currentPage: number = 1;
+  startPage: number = 1;
+  endPage: number = 3;
+  S: number = 0;
+  E: number = 4;
+
+
+  constructor(fb: FormBuilder,private employeeService: EmployeeService,private router: Router) { 
+    this.searchForm = fb.group({
+      'searchTerm': [''],
+      'searchText': ['']
+    });
+    this.searchClicked = false;
+  }
 
   ngOnInit() {
-    this.resetForm();
+
     this.refreshEmployeeList();
+   
   }
 
-  resetForm(form?: NgForm) {
-    if (form)
-      form.reset();
-    this.employeeService.selectedEmployee = {
-      _id: "",
-      category: "",
-      title: "",
-      content: "",
-      price: "",
-      imgurl: ""
-    }
-  }
 
-  onSubmit(form: NgForm) {
-    if (form.value._id == "") {
-      this.employeeService.postEmployee(form.value).subscribe((res) => {
-        this.resetForm(form);
-        this.refreshEmployeeList();
-        M.toast({ html: 'Saved successfully', classes: 'rounded' });
-      });
-    }
-    else {
-      this.employeeService.putEmployee(form.value).subscribe((res) => {
-        this.resetForm(form);
-        this.refreshEmployeeList();
-        M.toast({ html: 'Updated successfully', classes: 'rounded' });
-      });
-    }
-  }
+ 
 
   refreshEmployeeList() {
     this.employeeService.getEmployeeList().subscribe((res) => {
       this.employeeService.employees = res as Employee[];
     });
-  }
-
-  onEdit(emp: Employee) {
-    this.employeeService.selectedEmployee = emp;
-  }
-
-  onDelete(_id: string, form: NgForm) {
-    if (confirm('Are you sure to delete this record ?') == true) {
-      this.employeeService.deleteEmployee(_id).subscribe((res) => {
-        this.refreshEmployeeList();
-        this.resetForm(form);
-        M.toast({ html: 'Deleted successfully', classes: 'rounded' });
-      });
-    }
   }
 
 
@@ -82,6 +68,35 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('/view');
     }
    
+  }
+
+  onSearch(form: any) {
+    var txt = form.searchText;
+    if(txt != "") {
+      this.searchPost = [];
+      if(form.searchTerm == "") {
+        alert('검색 조건을 선택하세요.');
+        return;
+      } else if(form.searchTerm == "title") {
+        for (var i=0; i<this.allPost.length; i++) {
+          if(this.allPost[i].title.includes(txt)) {
+            this.searchPost.push(this.allPost[i]);
+          }
+        }
+      } else if(form.searchTerm == "category") {
+        for (var i=0; i<this.allPost.length; i++) {
+          if(this.allPost[i].category.includes(txt)) {
+            this.searchPost.push(this.allPost[i]);
+          }
+        }
+      }
+      if(this.searchPost[0] != null) {
+        this.searchClicked = true;
+      } else {
+        this.searchClicked = false;
+        alert("검색결과가 존재하지 않습니다.");
+      }
+    }
   }
 
 }

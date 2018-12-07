@@ -1,9 +1,10 @@
 //built-in
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpModule }    from '@angular/http';
 //components
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -48,7 +49,8 @@ import { UsereditComponent } from './useredit/useredit.component';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
