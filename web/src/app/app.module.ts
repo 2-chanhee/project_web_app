@@ -23,7 +23,8 @@ import { WriteComponent } from './write/write.component';
 import { TestComponent } from './test/test.component';
 import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
-import { UsereditComponent } from './useredit/useredit.component'; 
+import { UsereditComponent } from './useredit/useredit.component';
+import { PostSearchComponent } from './post-search/post-search.component'; 
 
 
 
@@ -43,7 +44,8 @@ import { UsereditComponent } from './useredit/useredit.component';
     TestComponent,
     ViewComponent,
     EditComponent,
-    UsereditComponent
+    UsereditComponent,
+    PostSearchComponent
   ],
   imports: [
     BrowserModule,

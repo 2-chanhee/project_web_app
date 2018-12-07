@@ -1,0 +1,65 @@
+<div class = "form">
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Tables</li>
+        </ol>
+  
+
+        
+
+  
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-table"></i> Data Table</div>
+          <div class="card-body">
+            <div class="col s7">
+              <table class="table table-hover table-condensed table-responsive-sm mb-auto">
+                  <thead>
+                    <tr>
+                  
+                      <th>임시 </th>
+                      <th>테스트</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let emp of searchPost">
+
+                   
+                  <!--   <a [routerLink]="['/','view']" class="nav-link">
+                       
+                   </a>--> 
+                   <td>{{emp.category}}</td>
+                    <td>{{emp.title}}</td>
+                    <a [routerLink]="['/','view']" class="nav-link">
+                       
+                    <td><button type="button" class="btn btn-default" aria-label="Left Align" (click)="goapplication(emp._id, emp.category)">
+                      <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                    상세보기</button></td></a>
+                  
+                    
+                  </tr>
+                </table>
+          </div>
+          </div>
+          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+      </div>
+    </div>
+  
+      
+      <!-- /.container-fluid-->
+      <!-- /.content-wrapper-->
+      <footer class="sticky-footer">
+        <div class="container">
+          <div class="text-center">
+            <small>Copyright © Your Website 2017</small>
+          </div>
+        </div>
+      </footer>
+  
