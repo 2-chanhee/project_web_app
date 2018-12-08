@@ -14,7 +14,8 @@ export class UserService {
     email: '',
     password: ''
   }
- user: User[];
+  users: User[];
+ 
   readonly baseURL = 'http://localhost:3000/user';
 
   noAuthHeader = {headers:new HttpHeaders({'NoAuth': 'True'})};
@@ -26,9 +27,8 @@ export class UserService {
   
  
   getUserList() {
-    return this.http.get(this.baseURL);
+    return this.http.get(environment.apiBaseUrl+'/admin');
   }
-
 
   putUser(user:User) {
     return this.http.put(environment.apiBaseUrl+ `/${user._id}`,user);

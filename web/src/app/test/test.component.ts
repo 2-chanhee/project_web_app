@@ -55,7 +55,7 @@ export class TestComponent implements OnInit {
 
   refreshUserList() {
     this.userService.getUserList().subscribe((res) => {
-      this.userService.user = res as User[];
+      //this.userService.user = res as User[];
     });
   }
 

@@ -1,42 +1,79 @@
-<form method="post" action="admin_login.php">
 
-  <div class="container">
-    <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Login</div>
-      <div class="card-body">
+<div class = "form">
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Tables</li>
+        </ol>
+  
 
+        
+        
+  
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-table"></i> Data Table</div>
+          <div class="card-body">
+            <div class="col s7">
+              <table class="table table-hover table-condensed table-responsive-sm mb-auto">
+                  <thead>
+                    <tr>
+                  
+                      <th>임시 </th>
+                      <th>테스트</th>
+                      <th></th>
+                    </tr>
 
-
-
-
-        <form>
-          <div class="form-group">
-            <label for="exampleInputName">Name</label>
-            <input class="form-control" name="admin_username" placeholder="Name" type="text">
+                  </thead>
+                  <tr *ngFor="let user of UserService.users">
+                   
+                  <!--   <a [routerLink]="['/','view']" class="nav-link">
+                       
+                   </a>--> 
+                   
+                   <td>{{user.fullName}}</td>
+                    <td>{{user.email}}</td>
+                    
+                  
+                    
+                  </tr>
+                </table>
           </div>
-
-
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" name="admin_password" placeholder="Password" type="password">
           </div>
-          
-          <input type="submit" class="btn btn-primary btn-block" name="submit" value="Login" >
-          <!-- <a class="btn btn-primary btn-block" href="tables.php" name="submit">Login</a> -->
-        </form>
-
-        <div class="text-center">
-      
-
-
-        <!-- <div class="text-center">
-          <a class="d-block small mt-3" href="register.php">Register an Account</a> -->
-         
-
-
-
-
+          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
       </div>
     </div>
-  </div>
+  
+      
+      <!-- /.container-fluid-->
+      <!-- /.content-wrapper-->
+      <footer class="sticky-footer">
+        <div class="container">
+          <div class="text-center">
+            <small>Copyright © Your Website 2017</small>
+          </div>
+        </div>
+      </footer>
+  
+  
+  
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+      </a>
+  
+  
+
+      <!-- Bootstrap core JavaScript-->
+      
+    </div>
+
+    <app-post-search *ngIf="searchClicked" [searchPost]="searchPost"></app-post-search>
+  
+  
