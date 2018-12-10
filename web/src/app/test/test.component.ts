@@ -41,7 +41,7 @@ export class TestComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (form.value._id == "") {
-      this.userService.postUser(form.value).subscribe((res) => {
+      this.userService.postUser2(form.value).subscribe((res) => {
         this.resetForm(form);
         this.refreshUserList();
         M.toast({ html: 'Saved successfully', classes: 'rounded' });
@@ -72,7 +72,7 @@ export class TestComponent implements OnInit {
         this.refreshUserList();
         this.resetForm(form);
 
-       this.router.navigateByUrl('/');
+       this.router.navigateByUrl('/test');
        
       });
     }
