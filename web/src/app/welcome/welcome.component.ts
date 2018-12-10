@@ -24,10 +24,10 @@ export class WelcomeComponent implements OnInit {
   currentUser: User;
   searchPost: Employee[] = [];
   searchClicked: boolean;
-  countList: number = 5;
+  countList: number = 20;
   
   S: number = 0;
-  E: number = 4;
+  E: number = 80;
 
 
   constructor(fb: FormBuilder,private employeeService: EmployeeService,private router: Router) { 

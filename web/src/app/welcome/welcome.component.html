@@ -94,11 +94,15 @@
         </a>
     
     
-
+        <div>
+        
+          <app-post-search *ngIf="searchClicked" [searchPost]="searchPost"></app-post-search>
+        </div>
         <!-- Bootstrap core JavaScript-->
         
       </div>
 
-      <app-post-search *ngIf="searchClicked" [searchPost]="searchPost"></app-post-search>
+    
+
     
     
