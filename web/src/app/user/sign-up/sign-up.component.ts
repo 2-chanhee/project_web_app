@@ -18,7 +18,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(form : NgForm){
-    this.userService.postUser(form.value).subscribe(
+    this.userService.postUser2(form.value).subscribe(
       res => {
         alert('회원가입 완료');
         this.resetForm(form);

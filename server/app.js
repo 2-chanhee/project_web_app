@@ -7,7 +7,10 @@ const bodyParser  = require('body-parser');
 const cors        = require('cors');
 const passport    = require('passport');
 const { mongoose } = require('./db.js');
+
 var employeeController = require('./controllers/employeeController.js');
+var userController = require('./controllers/userController.js');
+
 const rtsIndex  = require('./routes/index.router');
 
 var app = express();
@@ -18,6 +21,7 @@ app.use(cors({ origin: 'http://localhost:4200' }));
 app.use(passport.initialize());
 app.use('/api', rtsIndex);
 app.use('/employees', employeeController);
+app.use('/users',userController);
 // error handler
 app.use((err, req, res, next) => {
     if (err.name === 'ValidationError') {

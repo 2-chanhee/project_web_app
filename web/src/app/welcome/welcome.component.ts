@@ -27,7 +27,7 @@ export class WelcomeComponent implements OnInit {
   countList: number = 20;
   
   S: number = 0;
-  E: number = 80;
+  E: number = 50;
 
 
   constructor(fb: FormBuilder,private employeeService: EmployeeService,private router: Router) { 

@@ -8,6 +8,7 @@ import { HttpModule }    from '@angular/http';
 //components
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 //router
 import { appRoutes} from './routes';

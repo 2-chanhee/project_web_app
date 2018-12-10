@@ -1,28 +1,32 @@
-
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
-import { EmployeeService } from '../shared/employee.service';
+import { Router } from "@angular/router";
+
 import { UserService } from '../shared/user.service';
-import { Employee } from '../shared/employee.model';
+
 import { User } from '../shared/user.model';
 
 declare var M: any;
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css'],
-  providers: [User]
+  providers: [UserService]
 })
+
+
 export class TestComponent implements OnInit {
 
-  constructor(private userService: UserService,
-    private router: Router) { }
+
+  constructor(private userService: UserService,private router: Router) { }
 
   ngOnInit() {
     this.resetForm();
     this.refreshUserList();
   }
+
+  
   resetForm(form?: NgForm) {
     if (form)
       form.reset();
@@ -30,7 +34,8 @@ export class TestComponent implements OnInit {
       _id: "",
       fullName: "",
       email: "",
-     password: ""
+      password: ""
+    
     }
   }
 
@@ -39,8 +44,6 @@ export class TestComponent implements OnInit {
       this.userService.postUser(form.value).subscribe((res) => {
         this.resetForm(form);
         this.refreshUserList();
-        alert("입력 완료.");
-        this.router.navigate(['/']);
         M.toast({ html: 'Saved successfully', classes: 'rounded' });
       });
     }
@@ -55,12 +58,12 @@ export class TestComponent implements OnInit {
 
   refreshUserList() {
     this.userService.getUserList().subscribe((res) => {
-      //this.userService.user = res as User[];
+      this.userService.users = res as User[];
     });
   }
-
-  onEdit(user: User) {
+  onEdit(user: User ,id: string) {
     this.userService.selectedUser = user;
+    var check = localStorage.setItem('check', id);
   }
 
   onDelete(_id: string, form: NgForm) {
@@ -68,10 +71,14 @@ export class TestComponent implements OnInit {
       this.userService.deleteUser(_id).subscribe((res) => {
         this.refreshUserList();
         this.resetForm(form);
-        M.toast({ html: 'Deleted successfully', classes: 'rounded' });
+
+       this.router.navigateByUrl('/');
+       
       });
     }
   }
+
+
 
 }
 

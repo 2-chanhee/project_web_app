@@ -1,22 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
-import { environment } from '../../environments/environment';
-import {User} from './user.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+import { environment } from '../../environments/environment';
+import { User } from './user.model';
+
+@Injectable({providedIn: 'root'})
 export class UserService {
-  selectedUser: User = {
-    _id: '',
-    fullName: '',
-    email: '',
-    password: ''
-  }
+  selectedUser: User;
   users: User[];
- 
-  readonly baseURL = 'http://localhost:3000/user';
+
+  readonly baseURL = 'http://localhost:3000/users';
 
   noAuthHeader = {headers:new HttpHeaders({'NoAuth': 'True'})};
 
@@ -26,20 +20,30 @@ export class UserService {
 
   
  
-  getUserList() {
-    return this.http.get(environment.apiBaseUrl+'/admin');
-  }
+  postUser2(user: User){
+    return this.http.post(environment.apiBaseUrl+'/register' ,user,this.noAuthHeader);
+  }///// 회원가입 메소드 할려고 함 
 
   putUser(user:User) {
-    return this.http.put(environment.apiBaseUrl+ `/${user._id}`,user);
+    return this.http.put(this.baseURL+ `/${user._id}`,user);
   }
 
+  postUser(user: User){
+     return this.http.post(this.baseURL, user);
+    }//지금 관리자용 
+
+  getUserList() {
+    return this.http.get(this.baseURL);
+  }
+
+  
   deleteUser(_id: string) {
     return this.http.delete(this.baseURL + `/${_id}`);
   }
-  postUser(user: User){
-    return this.http.post(environment.apiBaseUrl+'/register' ,user,this.noAuthHeader);
-  }
+
+
+  //////////////////////////////////////////////////////////
+
 
   login(authCredentials){
     return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials);
