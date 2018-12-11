@@ -70,7 +70,8 @@ if(getArrayListFromJSONString(jsonString)==false) {
                 EditText email=(EditText)activity.findViewById(R.id.email);
                 EditText password=(EditText)activity.findViewById(R.id.password);
                 Log.e("login", email.getText().toString()+"과 "+jsonObject.getString("email"));
-                if(email.getText().toString().equals(jsonObject.getString("email"))){
+                Log.e("login", password.getText().toString()+"과 "+jsonObject.getString("password"));
+                if(email.getText().toString().equals(jsonObject.getString("email"))&&password.getText().toString().equals(jsonObject.getString("password"))){
 
                     loginresult=true;
                     Log.e("login", String.valueOf(loginresult));

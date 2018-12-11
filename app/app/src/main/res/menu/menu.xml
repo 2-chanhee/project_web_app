@@ -6,15 +6,12 @@
         app:showAsAction="always|withText"/>
     <item
         android:id="@+id/category"
-        android:title="카테고리"
+        android:title="   카테고리  "
         app:showAsAction="always|withText"/>
-    <item
-        android:id="@+id/chat"
-        android:title="채팅"
-        app:showAsAction="always|withText"/>
+
     <item
         android:id="@+id/login"
-        android:title="로그인"
+        android:title="  로그인  "
         app:showAsAction="always|withText"/>
 
 </menu>

@@ -10,47 +10,61 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_weight="2"
+
         android:orientation="vertical"
         android:paddingTop="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/search"
-                android:layout_width="match_parent"
+                android:layout_width="293dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+
                 android:hint="검색창"
                 android:textSize="18sp" />
 
             <Button
                 android:id="@+id/searchbtn"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+
                 android:text="검색" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+
             android:text="최근목록" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/enroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="글쓰기" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+
         android:orientation="horizontal">
         <ListView
             android:layout_width="match_parent"
@@ -61,17 +75,4 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/enroll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="글쓰기" />
-    </LinearLayout>
 </LinearLayout>
