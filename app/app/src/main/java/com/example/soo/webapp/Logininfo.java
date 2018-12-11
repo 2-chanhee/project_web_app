@@ -16,9 +16,7 @@ public class Logininfo {
 
     }
 
-//    public String toString() {
-//        return String.format(" Category : %s \n Title : %s \n Content : %s \n price : %s \n Imgurl : %s", category, title, content, price, imgurl);
-//    }
+
 
 
 }

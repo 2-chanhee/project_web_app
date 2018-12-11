@@ -96,29 +96,6 @@ public class Enrollment extends AppCompatActivity {
             }
         });
 
-        ////////////////////////////////////////////////////////////////////////////
-        /////////////////////////////////s3 접속시작/////////////////////////////////
-        /////////////////////////////////oncrete()안////////////////////////////////
-// Amazon Cognito 인증 공급자를 초기화합니다
-//        CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
-//                getApplicationContext(),
-//                "ap-northeast-2:1c649722-8ef1-464a-87e6-5c2c49fd2000", // 자격 증명 풀 ID
-//                Regions.AP_NORTHEAST_2 // 리전
-//        );
-//
-//        AmazonS3 s3 = new AmazonS3Client(credentialsProvider);
-//        // S3 버킷의 Region 이 서울일 경우 아래와 같습니다.
-//        s3.setRegion(Region.getRegion(Regions.AP_NORTHEAST_2));
-//        s3.setEndpoint("s3.ap-northeast-2.amazonaws.com");
-//
-//        TransferUtility transferUtility = new TransferUtility(s3, getApplicationContext());
-
-
-
-
-
-
-
 
 
 ///////////////////////////////
@@ -187,23 +164,6 @@ public class Enrollment extends AppCompatActivity {
                 //mAdapter.addItem(new MediaItem(MediaItem.SDCARD, mPhotoFileName, Uri.fromFile(mPhotoFile), MediaItem.IMAGE));
             }
         }
-// 아래 비디온대 필요없지만 일단 주석
-//        else if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
-//            if (mVideoFileName != null) {
-//                destination = new File(getExternalFilesDir(Environment.DIRECTORY_MOVIES), mVideoFileName);
-//                videoView = (VideoView) findViewById(R.id.videoView);
-//                videoView.setVideoURI(Uri.fromFile(destination));
-//
-//                videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//                    public void onPrepared(MediaPlayer player) {
-//                        videoView.seekTo(0);
-//                        videoView.start();
-//                    }
-//                });
-//            }
-//            else
-//                Toast.makeText(getApplicationContext(), "!!! null video.", Toast.LENGTH_LONG).show();
-//        }
 
     }
 
@@ -258,19 +218,7 @@ public class Enrollment extends AppCompatActivity {
         }
     }//외부메모리 확인되지 않을시 멈추는거
 
-//오디온듯 일단주석
-//    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-//        if (grantResults.length > 0
-//                && grantResults[0] == PackageManager.PERMISSION_GRANTED) { // permission was granted
-//            switch (requestCode) {
-//                case REQUEST_EXTERNAL_STORAGE_FOR_MULTIMEDIA:
-//                    playAudioFromExternalStorage();
-//                    break;
-//            }
-//        } else { // permission was denied
-//            Toast.makeText(getApplicationContext(),"접근 권한이 필요합니다",Toast.LENGTH_SHORT).show();
-//        }
-//    }//외부메모리에서 allow누르면 바로 노래 재생 권한설정
+
 //권한끝//
 public void s3upload(){//s3upload관련해서 따로 메소드 만듬
 // Amazon Cognito 인증 공급자를 초기화합니다
@@ -287,12 +235,7 @@ public void s3upload(){//s3upload관련해서 따로 메소드 만듬
 
     TransferUtility transferUtility = new TransferUtility(s3, getApplicationContext());
     Log.e("S3", mPhotoFileName+"제발..");
-//                TransferObserver observer = transferUtility.upload(
-//
-//                        "webwep",     /* 업로드 할 버킷 이름 */
-//                        mPhotoFileName,    /* 버킷에 저장할 파일의 이름 */
-//                        mPhotoFile        /* 버킷에 저장할 파일  */
-//                );
+
     s3.putObject("wpqkf",mPhotoFileName,mPhotoFile);
 }
 }

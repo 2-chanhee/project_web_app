@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     Log.e("listview", "JSONEXception");
                 }
-                new DeleteData(MainActivity.this).execute(postDataParam);//관리자페이지는 아니지만 관리하기 편하게 임시로 구현
+
                 new GetData(MainActivity.this).execute();
             }
         });

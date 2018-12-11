@@ -95,9 +95,7 @@ public class MyAdapter extends BaseAdapter {
 
         //////////
 
-//        // Set Icon
-//        ImageView icon = (ImageView) convertView.findViewById(R.id.iconItem);
-//        icon.setImageResource(mItems.get(position).imgurl);
+
 
         // Set Text 01
         TextView category = (TextView) convertView.findViewById(R.id.category);
@@ -120,16 +118,4 @@ public class MyAdapter extends BaseAdapter {
         return convertView;
     }
 }
-//
-//class MyItem {
-//    int mIcon; // image resource
-//    String nName; // text
-//    String nAge;  // text
-//
-//    MyItem(int aIcon, String aName, String aAge) {
-//        mIcon = aIcon;
-//        nName = aName;
-//        nAge = aAge;
-//    }
-//}
 

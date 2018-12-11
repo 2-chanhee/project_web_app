@@ -62,10 +62,6 @@ public class Category extends AppCompatActivity {
                 startActivity(intent1);
                 return true;
 
-//            case R.id.chat:
-//                Intent intent3=new Intent(getApplicationContext(),Category.class);
-//                startActivity(intent3);
-//                return true;
 
             case R.id.login:
                 Intent intent2=new Intent(getApplicationContext(),Login.class);

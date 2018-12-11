@@ -35,9 +35,6 @@ public class GetDataSearch extends GetRequest {
             return;
         ArrayList<Contents> arrayList = getArrayListFromJSONString(jsonString);
 
-//        ArrayAdapter adapter = new ArrayAdapter(activity,
-//                android.R.layout.simple_list_item_1,
-//                arrayList.toArray());
         MyAdapter adapter =new MyAdapter(activity, R.layout.adapter,arrayList);
         ListView txtList = activity.findViewById(R.id.listview);
         txtList.setAdapter(adapter);
