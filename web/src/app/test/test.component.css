@@ -34,6 +34,10 @@ div.card{
     border-radius: 10px;
 }
 
+.row{
+    color:#0a0101
+}
+
 .vl {
     border-left: 2px solid #0a0101;
     height: 400px;
