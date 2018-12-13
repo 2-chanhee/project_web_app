@@ -3,6 +3,7 @@ import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { UserService } from '../../shared/user.service';
+import { User } from 'src/app/shared/user.model';
 
 @Component({
   selector: 'app-sign-in',
@@ -27,8 +28,16 @@ export class SignInComponent implements OnInit {
     this.userService.login(form.value).subscribe(
       res => {
         this.userService.setToken(res['token']);
-        alert('로그인 성공');
-        this.router.navigateByUrl('/');
+
+        if(this.model.email=='pppp@nate.com' && this.model.password=='123123'){
+          alert('관리자입니다')
+          this.router.navigateByUrl('/test');
+        }
+        if(this.model.email!='pppp@nate.com'){
+          alert('로그인 성공');
+          this.router.navigateByUrl('/');
+        }
+          
       },
       err => {
         this.serverErrorMessages = err.error.message;
