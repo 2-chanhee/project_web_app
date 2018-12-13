@@ -1,3 +1,5 @@
+<app-bar></app-bar>
+
 <div class="form">
   <div class="col s12">
     <div class="card">
@@ -20,19 +22,13 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="content" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.content" placeholder="내용">
+                  <input type="text" name="content" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.content" placeholder="가격, 내용">
                
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
                   <input type="text" name="price" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.price" placeholder="전화번호">
-                 
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input type="text" name="imgurl" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.imgurl" placeholder="전화번호">
                  
                 </div>
               </div>

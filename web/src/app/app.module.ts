@@ -13,7 +13,6 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 //router
 import { appRoutes} from './routes';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { AdminComponent } from './admin/admin.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { UserService } from './shared/user.service';
@@ -36,7 +35,6 @@ import { PostSearchComponent } from './post-search/post-search.component';
     UserComponent,
     SignUpComponent,
     WelcomeComponent,
-    AdminComponent,
     SignInComponent,
     SignInComponent,
     UserProfileComponent,

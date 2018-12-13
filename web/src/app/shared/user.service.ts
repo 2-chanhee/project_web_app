@@ -18,6 +18,7 @@ export class UserService {
 
   //http methods
 
+ 
   
  
   postUser2(user: User){
@@ -56,6 +57,16 @@ export class UserService {
   getToken(){
     return localStorage.getItem('token');
   }
+
+   //admin
+   setAdminToken(admintoken: string){
+    localStorage.setItem('admintoken',admintoken);
+  }
+
+  getAdminToken(){
+    return localStorage.getItem('admintoken');
+  }
+
 
   deleteToken() {
     localStorage.removeItem('token');
