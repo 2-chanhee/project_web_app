@@ -1,28 +1,45 @@
-
-
-<form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
-  <div class ="form">
-    <input type="text" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" name="fullName" placeholder="Username"
-    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fullName.valid }">
-    <div *ngIf="signUpForm.submitted && !fullName.valid">
-      <label class="validation-message">필수 항목입니다.</label>
+<div class="form">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col s5">
+              <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="fullName" #name="ngModel" [(ngModel)]="userService.selectedUser.fullName" placeholder="이름" required>
+                    <label>
+                      <label class="red-text">*</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="email" #name="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="이메일">
+                    <label></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="password" #name="ngModel" [(ngModel)]="userService.selectedUser.password" placeholder="패스워드">
+                    <label></label>
+                  </div>
+                </div>
+     
+               
+                <div class="row">
+                  <div class="input-field col s12">
+                  
+                    <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
     </div>
-    <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
-    required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
-    <div *ngIf="signUpForm.submitted && email.errors">
-      <label *ngIf="email.errors.required" class="validation-message">필수 항목입니다.</label>
-      <label *ngIf="email.errors.pattern" class="validation-message">올바르지 않은 이메일 형식입니다.</label>
-    </div>
-    <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
-    minlength="6" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
-    <div *ngIf="signUpForm.submitted && password.errors">
-      <label *ngIf="password.errors.required" class="validation-message">필수 항목입니다.</label>
-      <label *ngIf="password.errors.minlength" class="validation-message">비밀번호는 6글자 이상 입력해주세요.</label>
-    </div>
- 
-    <input type="submit"  value="Sign Up" >
- 
-</div>
-  </form>
-
-
+  
+  </div>

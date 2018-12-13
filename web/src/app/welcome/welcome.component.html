@@ -33,7 +33,9 @@
               </form>
             </div>
           
-          
+            <div>
+              <app-post-search *ngIf="searchClicked" [searchPost]="searchPost"></app-post-search>
+            </div>
     
           <!-- Example DataTables Card-->
           <div class="card mb-3">
@@ -59,11 +61,13 @@
                      
                      <td>{{emp.category}}</td>
                       <td>{{emp.title}}</td>
-                      <a [routerLink]="['/','view']" class="nav-link">
-                         
-                      <td><button type="button" class="btn btn-default" aria-label="Left Align" (click)="goapplication(emp._id, emp.category)">
+                                              
+                      <td><a [routerLink]="['/','view']" class="nav-link">
+                        <button type="button" class="btn btn-default" aria-label="Left Align" (click)="goapplication(emp._id, emp.category)">
                         <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
-                      상세보기</button></td></a>
+                      상세보기</button>
+                    </a>
+                  </td>
                     
                       
                     </tr>
@@ -94,10 +98,7 @@
         </a>
     
     
-        <div>
-        
-          <app-post-search *ngIf="searchClicked" [searchPost]="searchPost"></app-post-search>
-        </div>
+    
         <!-- Bootstrap core JavaScript-->
         
       </div>
