@@ -13,9 +13,9 @@
         <li *ngIf="!userService.getToken()" class="nav-item">
           <a [routerLink]="['/','signup']" class="nav-link">회원가입</a>
         </li>
-         <li *ngIf="!userService.getToken()" class="nav-item">
+         <!-- <li *ngIf="!userService.getToken()" class="nav-item">
           <a [routerLink]="['/','signin']" class="nav-link">관리자</a>
-        </li> 
+        </li>  -->
         <li *ngIf="userService.getToken()" class="nav-item">
           <a [routerLink]="['/','write']" class="nav-link">글쓰기</a>
         </li>

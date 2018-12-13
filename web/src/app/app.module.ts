@@ -24,7 +24,8 @@ import { TestComponent } from './test/test.component';
 import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
 import { UsereditComponent } from './useredit/useredit.component';
-import { PostSearchComponent } from './post-search/post-search.component'; 
+import { PostSearchComponent } from './post-search/post-search.component';
+import { Bar2Component } from './bar2/bar2.component'; 
 
 
 
@@ -43,7 +44,8 @@ import { PostSearchComponent } from './post-search/post-search.component';
     ViewComponent,
     EditComponent,
     UsereditComponent,
-    PostSearchComponent
+    PostSearchComponent,
+    Bar2Component
   ],
   imports: [
     BrowserModule,
