@@ -49,6 +49,7 @@ export class TestComponent implements OnInit {
     }
     else {
       this.userService.putUser(form.value).subscribe((res) => {
+        alert("수정 완료");
         this.resetForm(form);
         this.refreshUserList();
         M.toast({ html: 'Updated successfully', classes: 'rounded' });
@@ -67,7 +68,7 @@ export class TestComponent implements OnInit {
   }
 
   onDelete(_id: string, form: NgForm) {
-    if (confirm('Are you sure to delete this record ?') == true) {
+    if (confirm('삭제하시겠습니까 ?') == true) {
       this.userService.deleteUser(_id).subscribe((res) => {
         this.refreshUserList();
         this.resetForm(form);

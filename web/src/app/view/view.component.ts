@@ -69,7 +69,7 @@ export class ViewComponent implements OnInit {
   }
 
   onDelete(_id: string, form: NgForm) {
-    if (confirm('Are you sure to delete this record ?') == true) {
+    if (confirm('삭제하시겠습니까 ?') == true) {
       this.employeeService.deleteEmployee(_id).subscribe((res) => {
         this.refreshEmployeeList();
         this.resetForm(form);

@@ -44,6 +44,7 @@ export class SignUpComponent implements OnInit {
   onSubmit(form: NgForm) {
     if (form.value._id == "") {
       this.userService.postUser2(form.value).subscribe((res) => {
+        alert("회원가입 완료");
         this.resetForm(form);
         this.refreshUserList();
         M.toast({ html: 'Saved successfully', classes: 'rounded' });
