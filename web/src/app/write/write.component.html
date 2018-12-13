@@ -10,7 +10,7 @@
               <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
               <div class="row" >
                 <div class="input-field col s12">
-                  <input type="text" name="category" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.category" placeholder="작성자" required>
+                  <input type="text" name="category" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.category" placeholder="카테고리(전자기기, 책, 기타 중 선택)" required>
                  
                 </div>
               </div>
@@ -28,7 +28,7 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="text" name="price" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.price" placeholder="전화번호">
+                  <input type="text" name="price" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.price" placeholder="학번, 전화번호">
                  
                 </div>
               </div>

@@ -71,14 +71,14 @@ export class WelcomeComponent implements OnInit {
         alert('검색 조건을 선택하세요.');
         return;
       } 
-      else if(form.searchTerm == "title") {
+      else if(form.searchTerm == "category") {
         for (var i=0; i<this.allPost.length; i++) {
           if(this.allPost[i].title.includes(txt)) {
             this.searchPost.push(this.allPost[i]);
           }
         }
       } 
-      else if(form.searchTerm == "category") {
+      else if(form.searchTerm == "title") {
         for (var i=0; i<this.allPost.length; i++) {
           if(this.allPost[i].category.includes(txt)) {
             this.searchPost.push(this.allPost[i]);

@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
   showSuccessMessage: boolean;
   serverErrorMessages: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router:Router) { }
 
   ngOnInit() {
     this.resetForm();
@@ -45,6 +45,7 @@ export class SignUpComponent implements OnInit {
     if (form.value._id == "") {
       this.userService.postUser2(form.value).subscribe((res) => {
         alert("회원가입 완료");
+        this.router.navigateByUrl('/');
         this.resetForm(form);
         this.refreshUserList();
         M.toast({ html: 'Saved successfully', classes: 'rounded' });
