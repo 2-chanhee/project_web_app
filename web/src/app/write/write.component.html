@@ -32,6 +32,13 @@
                  
                 </div>
               </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="hidden" name="imgurl" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.imgurl" placeholder="이미지">
+                 
+                </div>
+              </div>
               <div class="row">
                 <div class="input-field col s12">
                   <button class="btn btn-custom right" type="button" (click)="resetForm(employeeForm)">Reset</button>
