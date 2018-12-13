@@ -17,6 +17,7 @@ export const appRoutes: Routes = [
     
         {path: '', component: WelcomeComponent},
         {path: 'signup', component: SignUpComponent},
+      
         {path: 'signin', component: SignInComponent},
         {path: 'userprofile', component:  UserProfileComponent, canActivate:[AuthGuard]},
         {path: 'write', component:  WriteComponent, canActivate:[AuthGuard]},  

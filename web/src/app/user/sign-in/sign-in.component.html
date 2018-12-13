@@ -6,12 +6,12 @@
           <div class="row">
             <div class="col s5">
 
-<form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+<form #userForm="ngForm" (ngSubmit)="userForm.valid && onSubmit(userForm)">
     <div class="row">
         <div class="input-field col s12">
     <input type="text" name="email" #email="ngModel" [(ngModel)]="model.email"  placeholder="Email" [pattern]="emailRegex" required
-    [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }">
-    <div *ngIf="signInForm.submitted && email.errors?.pattern">
+    [ngClass]="{'invalid-textbox' :userForm.submitted && !email.valid }">
+    <div *ngIf="userForm.submitted && email.errors?.pattern">
       <label class="validation-message">Invalid email address.</label>
     </div>
     </div>
@@ -20,8 +20,8 @@
     <div class="row">
         <div class="input-field col s12">
     <input type="password" name="password" #password="ngModel" [(ngModel)]="model.password"  placeholder="Password"
-    required minlength="6"   [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }">
-    <div *ngIf="signInForm.submitted && password.errors?.minlength">
+    required minlength="6"   [ngClass]="{'invalid-textbox' :userForm.submitted && !password.valid }">
+    <div *ngIf="userForm.submitted && password.errors?.minlength">
       <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
       <label *ngIf="email.errors.pattern" class="validation-message">올바르지 않은 이메일 형식입니다.</label>
     </div>
@@ -32,7 +32,7 @@
     <div class="row">
         <div class="input-field col s12">
         
-          <button class="btn btn-custom right" value="Sign In" type="submit" [disabled]="!userForm.valid">Submit</button>
+          <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Submit</button>
         </div>
       </div>
  

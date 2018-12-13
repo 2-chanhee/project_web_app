@@ -36,7 +36,6 @@ import { PostSearchComponent } from './post-search/post-search.component';
     SignUpComponent,
     WelcomeComponent,
     SignInComponent,
-    SignInComponent,
     UserProfileComponent,
     BarComponent,
     WriteComponent,
