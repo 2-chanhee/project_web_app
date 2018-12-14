@@ -111,7 +111,7 @@ public class MyAdapter extends BaseAdapter {
 
         // Set Text 02
         TextView price = (TextView) convertView.findViewById(R.id.price);
-        price.setText("가격: "+mItems.get(position).price);
+        price.setText("학번,번호: "+mItems.get(position).price);
 
 
 
