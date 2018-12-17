@@ -112,5 +112,18 @@ angular cli 설치 후 ng --version으로 확인
 
 --여기까지 실행하면 웹과 서버를 실행할 수 있다--
 
+13.Android studio를 실행시킨다.
 
+14.GetBook GetData GetDataLgn GetData GetDataLgn GetDataLgnbyPost GetDataSearch GetElect GetEtc
+   InsertData InsertLoginData 클라스에 있는 (AWS 주소/경로)를 본인 주소경로로 바꾸어 준다.
+   ex) String serverURLStr = "http://aws주소/경로";
+   
+15.Enrollment클라스에서 s3upload메소드 안에 있는 Amazon Cognito 인증 공급자를 초기화하여야 한다.
+   aws에 들어가 Cognito에서 identityPoolId를 가져오고 리전도 맞게 적어준다. 
+   다음과 같이 s3.putObject("S3폴더이름",mPhotoFileName,mPhotoFile);로 S3버켓이름도 적어주면 된다.
+   Aws S3에 들어가 버켓정책에서 public 설정도 해주어야 한다.
+
+16.API버전 26이하로 AVD를 실행시킨다.
+
+17.웹과 앱이 잘 연동되는지 확인한다.
 
