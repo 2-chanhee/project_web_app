@@ -1,7 +1,7 @@
 require('./config/config');
 require('./models/db');
 require('./config/passportConfig');
-
+var path = require('path');
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const cors        = require('cors');
@@ -22,6 +22,7 @@ app.use(passport.initialize());
 app.use('/api', rtsIndex);
 app.use('/employees', employeeController);
 app.use('/users',userController);
+app.use(express.static(path.join(__dirname, 'public')));
 // error handler
 app.use((err, req, res, next) => {
     if (err.name === 'ValidationError') {
