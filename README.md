@@ -106,9 +106,11 @@ angular cli 설치 후 ng --version으로 확인
 
 10. build가 완료되면 cd .. 명령어를 사용해 /progect_server로 이동
 
-8. node app.js로 서버 실행
+11. node app.js로 서버 실행
 
-9. 인터넷에 자신의 ip:3000로 실행
+12. 인터넷에 자신의 ip:3000로 실행
 
-4. 서버가 정상적으로 실행되면, https://github.com/kwanulee/AndroidNodeJS 안드로이드 프로젝트를 다운받아 디바이스에 설치하고 실행해 본다.
+--여기까지 실행하면 웹과 서버를 실행할 수 있다--
+
+
 
