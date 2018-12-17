@@ -1,0 +1,70 @@
+<app-bar2></app-bar2>
+<div class="form">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="fullName" #name="ngModel" [(ngModel)]="userService.selectedUser.fullName" placeholder="이름" required>
+                  <label>
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="email" #name="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="이메일">
+                  <label></label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="password" #name="ngModel" [(ngModel)]="userService.selectedUser.password" placeholder="패스워드">
+                  <label></label>
+                </div>
+              </div>
+   
+             
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(userForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!userForm.valid">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>fullName</th>
+                      <th>email</th>
+                      <th>password</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let user of userService.users">
+                    <td>{{user.fullName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.password}}</td>
+                    <td>
+                        <a class="action-btn" (click)="onEdit(user)">
+                          <i class="material-icons">edit</i>
+                        </a>
+                        <a class="action-btn" (click)="onDelete(user._id,userForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,60 @@
+form div.input-field input{
+    padding-left: 15px !important;
+    color: #0a0101;
+}
+
+input.ng-invalid.ng-dirty{
+    border-bottom-color : #0a0101 !important;
+    box-shadow: 0 1px 0 0 #0a0101 !important;
+}
+
+::placeholder{
+    color:black
+}
+
+.input-field>label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.form {
+
+    margin: 80px auto;
+   }
+.btn-custom,.btn-custom:hover,.btn-custom:focus{ /* reset button 테두리 */
+    background-color: transparent;
+    font-size: 1.1rem;
+    margin : 0px 5px;
+    border: #050808 solid 1px ;
+    text-transform:none;
+}
+
+div.card{
+    background-color : #f5f1f1;
+    border-radius: 10px;
+}
+
+.row{
+    color:#0a0101
+}
+
+.vl {
+    border-left: 2px solid #0a0101;
+    height: 400px;
+}
+
+a.action-btn{
+    color: #0a0101 ;
+    margin: 0px 5px;
+
+}
+a.action-btn:hover{
+    cursor: pointer;
+}
+
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 10%;
+    left:7%;
+  }

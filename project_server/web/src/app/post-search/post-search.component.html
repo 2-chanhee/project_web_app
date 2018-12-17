@@ -1,0 +1,55 @@
+<div class = "form">
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+     
+  
+
+        
+
+  
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fa fa-table"></i> Data Table</div>
+          <div class="card-body">
+            <div class="col s7">
+              <table class="table table-hover table-condensed table-responsive-sm mb-auto">
+                  <thead>
+                    <tr>
+                  
+                      <th>작성자 </th>
+                      <th>제목</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let emp of searchPost">
+
+                   
+                  <!--   <a [routerLink]="['/','view']" class="nav-link">
+                       
+                   </a>--> 
+                   <td>{{emp.category}}</td>
+                    <td>{{emp.title}}</td>
+                   
+                       
+                    <td> <a [routerLink]="['/','view']" class="nav-link">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" (click)="goapplication(emp._id, emp.category)">
+                      <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                    상세보기</button>
+                  </a></td>
+                  
+                    
+                  </tr>
+                </table>
+          </div>
+          </div>
+         
+      </div>
+    </div>
+  
+      
+      <!-- /.container-fluid-->
+      <!-- /.content-wrapper-->
+   
+  

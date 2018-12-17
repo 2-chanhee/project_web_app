@@ -1,0 +1,31 @@
+<app-bar></app-bar>
+<table *ngIf="userDetails" class="table-fill">
+  <thead>
+      <tr>
+          <th colspan="2" class="text-center">User Profile</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Username</td>
+          <td>{{userDetails.fullName}}</td>
+      </tr>
+ 
+      <tr>
+          <td>Email</td>
+          <td>{{userDetails.email}}</td>
+      </tr>
+ 
+  </tbody>
+
+  <div class="row">
+    <div class="input-field col s12">
+            <a [routerLink]="['/','useredit']" class="nav-link">
+            <td><button type="button" class="btn btn-default" aria-label="Left Align" (click)="goapplication(userDetails._id, userDetails.fullName)">
+                    <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                  프로필수정</button></td></a>
+    
+    </div>
+  </div>
+
+</table>

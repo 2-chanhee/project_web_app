@@ -1,0 +1,112 @@
+<app-bar></app-bar>
+
+  <div class = "form">
+      <img src="/assets/한성.jpg" style="margin-left: auto; margin-right: auto; display: block;"/>
+
+     
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Tables</li>
+          </ol>
+    
+
+
+          <div class="col-md-6 mb-1">
+              <form name="searchForm"
+                    [formGroup]="searchForm"
+                    (ngSubmit)="onSearch(searchForm.value)">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <select class="btn btn-outline-dark" name="searchTerm" [formControl]="searchForm.controls['searchTerm']">
+                      <option value="" selected disabled hidden>검색 </option>
+                      <option value="title">카테고리</option>
+                      <option value="category">제목</option>
+                    </select>
+                  </div>
+                  <input type="text" class="form-control" name="searchText" [formControl]="searchForm.controls['searchText']">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-dark" type="submit">검색  </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          
+            <div>
+              <app-post-search *ngIf="searchClicked" [searchPost]="searchPost"></app-post-search>
+            </div>
+    
+          <!-- Example DataTables Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-table"></i> Data Table</div>
+            <div class="card-body">
+              <div class="col s7">
+                <table class="table table-hover table-condensed table-responsive-sm mb-auto">
+                    <thead>
+                      <tr>
+                    
+                        <th>카테고리 </th>
+                        <th>제목</th>
+                        <th></th>
+                      </tr>
+
+                    </thead>
+                    <tr *ngFor="let emp of allPost | slice:S:E">
+                     
+                    <!--   <a [routerLink]="['/','view']" class="nav-link">
+                         
+                     </a>--> 
+                     
+                     <td>{{emp.category}}</td>
+                      <td>{{emp.title}}</td>
+                                              
+                      <td><a [routerLink]="['/','view']" class="action-btn">
+                        <button type="button" class="btn btn-default" aria-label="Left Align" (click)="goapplication(emp._id, emp.category)">
+                        <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
+                      상세보기</button>
+                    </a>
+                  </td>
+                    
+                      
+                    </tr>
+                  </table>
+            </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+        </div>
+      </div>
+    
+        
+        <!-- /.container-fluid-->
+        <!-- /.content-wrapper-->
+        <footer class="sticky-footer">
+          <div class="container">
+            <div class="text-center">
+              <small>Copyright © Your Website 2018</small>
+            </div>
+          </div>
+        </footer>
+    
+    
+    
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fa fa-angle-up"></i>
+        </a>
+    
+    
+    
+        <!-- Bootstrap core JavaScript-->
+        
+      </div>
+
+    
+
+    
+    
