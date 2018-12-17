@@ -67,7 +67,7 @@ public class GetData extends GetRequest {
                         jsonObject.getString("content"),
                         jsonObject.getString("price"),
                         jsonObject.getString("imgurl"));
-                Log.e("Content", jsonObject.getString("category")+jsonObject.getString("title")+jsonObject.getString("content")+jsonObject.getString("price")+jsonObject.getString("imgurl"));
+//                Log.e("Content", jsonObject.getString("category")+jsonObject.getString("title")+jsonObject.getString("content")+jsonObject.getString("price")+jsonObject.getString("imgurl"));
                 output.add(book);
             }
         } catch (JSONException e) {
