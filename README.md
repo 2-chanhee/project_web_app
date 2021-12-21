@@ -1,4 +1,8 @@
-# Project_webapp
+# project_web_app
+
+#### server: nodeJS
+#### database: mongoDB,
+#### front: angular, android
 
 # AWS에서 실행 방법
 ## 1. 사전준비
